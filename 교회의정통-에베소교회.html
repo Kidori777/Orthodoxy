@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>교회의 정통 · 에베소 교회 — 워치만 리</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0a0b0f;
+    --bg-deep: #06070a;
+    --panel: #12141b;
+    --panel-line: #262a34;
+    --gold: #c6a15b;
+    --gold-bright: #ecc97a;
+    --gold-dim: #8a7442;
+    --ink: #ece7d9;
+    --ink-soft: #b3ac9a;
+    --ink-faint: #726c5c;
+    --serif: 'Noto Serif KR', serif;
+    --sans: 'Noto Sans KR', sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection{ background: var(--gold-dim); color: #0a0b0f; }
+
+  main{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 8vh 6vw 4vh;
+  }
+
+  .series-tag{
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-family: var(--sans);
+    font-size: .74rem;
+    letter-spacing: .26em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 3.4rem;
+  }
+  .series-tag::before{
+    content: '';
+    width: 22px; height: 1px;
+    background: var(--gold-dim);
+    display: inline-block;
+  }
+
+  .chapter{
+    padding: 3.5rem 0 4.5rem;
+  }
+
+  .chapter-head{ margin-bottom: 2.6rem; }
+
+  .lamp-row{
+    display: flex;
+    gap: .55rem;
+    margin-bottom: 1.6rem;
+  }
+  .lamp{
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid var(--panel-line);
+  }
+  .lamp.lit{
+    background: var(--gold-bright);
+    border-color: var(--gold-bright);
+    box-shadow: 0 0 9px 1px rgba(236,201,122,.5);
+  }
+
+  .chip{
+    font-family: var(--sans);
+    font-size: .72rem;
+    letter-spacing: .1em;
+    color: var(--gold-dim);
+    border: 1px solid var(--panel-line);
+    border-radius: 999px;
+    padding: .3rem .7rem;
+    white-space: nowrap;
+    display: inline-block;
+    margin-bottom: 1.1rem;
+  }
+
+  .chapter-head h1{
+    font-family: var(--serif);
+    font-weight: 900;
+    font-size: clamp(2.1rem, 6.4vw, 3.4rem);
+    margin: 0 0 .6rem;
+    line-height: 1.15;
+  }
+  .chapter-head h1 span{
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold) 60%, var(--gold-dim));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .chapter-eyebrow{
+    font-family: var(--sans);
+    font-size: .8rem;
+    letter-spacing: .18em;
+    color: var(--ink-faint);
+  }
+
+  .scripture-panel{
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-left: 3px solid var(--gold-dim);
+    border-radius: 4px;
+    padding: 2.2rem clamp(1.2rem, 4vw, 2.2rem);
+    margin: 0 0 3rem;
+  }
+  .scripture-panel p{
+    font-size: 1rem;
+    line-height: 2.1;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .scripture-panel .verse-tag{
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: .72rem;
+    letter-spacing: .06em;
+    color: var(--gold-bright);
+    background: rgba(198,161,91,0.10);
+    border: 1px solid var(--gold-dim);
+    border-radius: 3px;
+    padding: .1rem .5rem;
+    margin-left: .4rem;
+    white-space: nowrap;
+  }
+
+  .prose p{
+    font-size: 1.06rem;
+    line-height: 2.05;
+    color: var(--ink);
+    margin: 0 0 1.7rem;
+    font-weight: 400;
+  }
+
+  .dropcap::first-letter{
+    font-family: var(--serif);
+    font-weight: 900;
+    font-size: 3.2rem;
+    line-height: .78;
+    float: left;
+    margin: .1rem .55rem 0 0;
+    color: var(--gold-bright);
+  }
+
+  .quote-block{
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-left: 3px solid var(--gold-dim);
+    border-radius: 4px;
+    padding: 1.5rem 1.7rem;
+    margin: 0 0 1.8rem;
+  }
+  .quote-block p{
+    font-size: .98rem;
+    line-height: 1.95;
+    color: var(--ink-soft);
+    margin: 0 0 .6rem;
+  }
+  .quote-block p:last-child{ margin-bottom: 0; }
+  .quote-block .cite{
+    display: block;
+    font-family: var(--sans);
+    font-size: .75rem;
+    letter-spacing: .06em;
+    color: var(--gold-dim);
+    margin-top: .8rem;
+  }
+
+  .inline-cite{
+    font-family: var(--sans);
+    font-size: .88em;
+    letter-spacing: .01em;
+    color: var(--gold);
+  }
+
+  .stars-divider{
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+    padding: 1.4rem 0 2.6rem;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .9s ease, transform .9s ease;
+  }
+  .stars-divider.is-visible{ opacity: 1; transform: translateY(0); }
+  .stars-divider svg{ width: 9px; height: 9px; }
+  .stars-divider svg:nth-child(4){ width: 13px; height: 13px; }
+
+  footer{
+    text-align: center;
+    padding: 5rem 6vw 6rem;
+    border-top: 1px solid var(--panel-line);
+    margin-top: 2rem;
+  }
+  .footer-mark{
+    width: 34px;
+    margin: 0 auto 1.2rem;
+    opacity: .7;
+  }
+  footer p{
+    font-family: var(--sans);
+    font-size: .78rem;
+    letter-spacing: .2em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  @media (max-width: 640px){
+    main{ padding: 7vh 7vw 3vh; }
+    .chapter{ padding: 2.4rem 0 3.2rem; }
+    .prose p, .scripture-panel p, .quote-block p{ line-height: 1.95; }
+    .scripture-panel{ padding: 1.7rem 1.2rem; }
+    .quote-block{ padding: 1.2rem 1.3rem; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *, *::before, *::after{
+      animation-duration: .001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <p class="series-tag">교회의 정통 · 워치만 리 · 일곱 교회</p>
+
+<section class="chapter reveal" id="ephesus">
+    <div class="chapter-head">
+      <div class="lamp-row" aria-hidden="true">
+        <span class="lamp lit"></span><span class="lamp"></span><span class="lamp"></span>
+        <span class="lamp"></span><span class="lamp"></span><span class="lamp"></span><span class="lamp"></span>
+      </div>
+      <span class="chip">계 2:1—7 · 첫째 교회</span>
+      <h1><span>에베소</span> 교회</h1>
+      <p class="chapter-eyebrow">사모할 만한 교회 — 사도 시대 이후 첫 단계</p>
+    </div>
+
+    <div class="scripture-panel">
+      <p>에베소 교회의 사자에게 편지하기를 오른손에 일곱 별을 붙잡고 일곱 금촛대 사이에 다니시는 이가 가라사대 내가 네 행위와 수고와 네 인내를 알고 또 악한 자들을 용납치 아니한 것과 자칭 사도라 하되 아닌 자들을 시험하여 그 거짓된 것을 네가 드러낸 것과 또 네가 참고 내 이름을 위하여 견디고 게으르지 아니한 것을 아노라 그러나 너를 책망할 것이 있나니 너의 처음 사랑을 버렸느니라 그러므로 어디서 떨어진 것을 생각하고 회개하여 처음 행위를 가지라 만일 그리하지 아니하고 회개치 아니하면 내가 네게 임하여 네 촛대를 그 자리에서 옮기리라 오직 네게 이것이 있으니 네가 니골라당의 행위를 미워하는 도다 나도 이것을 미워하노라 귀 있는 자는 성령이 교회들에게 하시는 말씀을 들을지어다 이기는 그에게는 내가 하나님의 낙원에 있는 생명나무의 과실을 주어 먹게 하리라 <span class="verse-tag">계 2:1—7</span></p>
+    </div>
+
+    <div class="prose">
+      <p class="dropcap">에베소 교회는 사도 시대 이후 제일 첫 단계의 교회 상태를 예언한다. 주후 96년까지는 사도 시대였다. 그러나 96년 이후로부터 옳지 않은 많은 것들이 점점 들어오기 시작하여 사도 시대와는 다르게 되었다. 이 책은 예언의 책이기 때문에 이 책 가운데 있는 이름도 다 예언적인 것이다. 「에베소」는 헬라어 원문으로 '사모할 만한'이라는 뜻을 갖고 있다. 이 교회는 사도 시대 교회 이후에도 여전히 사모할 만한 교회였다.</p>
+
+      <p>주님께서는 내가 네 행위와 수고와 네 인내를 알고. 계 2장 2절 — 계시록 2,3장에서 사용되는 「너」라는 글자는 다 단수이다. 일곱 교회 가운데에서 다섯 교회는 책망을 받았고, 한 교회는 책망도 칭찬도 없었으며, 오직 한 교회만이 칭찬을 받았다. 에베소 교회는 책망을 받은 교회 중의 하나였다. 그러나 주님은 여기에서 에베소 교회의 사자에게 먼저 영적 실제를 알려 주셨다. 어떤 사람은 생각하기를 「주님은 책망하시기 전에 먼저 좋은 말을 하신다. 그렇게 하는 것이 책망을 받는 사람들에게 좋을 것이다. 주님은 그런 수단을 쓰신다.」라고 할지도 모른다. 그러나 주님은 그런 분이 아니시다. 주님은 여기에서 교회의 영적 실제를 드러내 놓으시는 것이다. 어찌되었든 영에 속한 실제 한 가지는 존재한다. 사람들은 이스라엘의 행위를 보지만 하나님은 발람을 통해 말씀하시기를 「여호와는 야곱의 허물을 보지 아니하시며」<span class="inline-cite">민수기 23:21</span>라고 하셨다. 원문에는 하나님이 보지 않는 것이 아니라 하나님께 보이지 않는다고 나타나 있다. 그러면 하나님의 눈이 우리의 눈보다 못하다는 말인가? 그렇지 않다. 하나님은 다만 영에 속한 실제를 보시는 것이다. 우리는 오늘 교회의 황폐한 상태를 보며 그것이 그 형제나 그 자매의 허물 때문이라고 말한다. 그러나 우리에게 하나님의 빛이 비췰 때 우리는 즉시 그 많은 약함과 실패가 다 허황한 것임을 보게 된다. 영에 속한 실제만이 사실일진대 그러한 것은 다 허황한 것이다. 예를 들어 한 어린아이가 길에 나가 흙을 잔뜩 묻혀 왔다고 하자. 그 아이가 집에 들어올 때 그 몸은 더럽지만 나는 그 아이를 깨끗하고 아름답다고 말할 수 있다. 비록 그의 온몸은 더럽지만 그 더러움은 속에서부터 생겨난 것이 아니기 때문이다. 그 더러움은 겉에 있는 것이므로 씻기만 하면 깨끗해지는 것이다. 하나님의 자녀들이 배워야 할 것은 그 아이를 씻기기 전에도 좋게 여기는 것이다. 그 더러움은 허황한 것이고 그 아이의 실제는 좋은 것이다. 오늘 교회는 하나님께서 말씀하시는 그 영광과 똑같지는 않다. 그러나 오늘의 교회는 참으로 영광스러운 것이다. 만일 당신에게 영적인 눈이 있다면 그 아이를 씻기지 않아도 그 아이의 좋은 것을 볼 수 있을 것이다. 그러므로 우리는 항상 교회를 인하여 하나님께 감사를 드려야 할 것이다. 교회는 영광스러운 것이다. 티나 주름 잡힌 것이나 이런 것들이 없이 거룩하고 흠이 없는 영광스러운 것이다.</p>
+
+      <div class="quote-block">
+        <p>자기 앞에 영광스러운 교회로 세우사 티나 주름 잡힌 것이나 이런 것들이 없이 거룩하고 흠이 없게 하려 하심이니라</p>
+        <span class="cite">에베소서 5:27</span>
+      </div>
+
+      <p>티가 없다는 것은 죄가 없다는 것을 의미하고 주름 잡힌 것이 없다는 것은 늙지 않았다는 것을 의미한다. 그러므로 교회는 항상 주님 앞에서 신선함을 갖고 있다. 하나님께서 에베소 교회를 좋다고 하시는 것은 그의 영에 속한 실제가 좋다는 것이다.</p>
+
+      <p>「자칭 사도라 하되 아닌 자들을 시험하여 그 거짓된 것을 네가 드러낸 것과」<span class="inline-cite">계 2:2</span> — 주님께서 사도를 시험했다고 하신 데서 사도 시대 이후에도 교회 가운데 여전히 사도가 있었음이 증명된다. 만일 그 사도라는 말이 열두 사도만을 가리키는 것이라면 여기에서 말하는 사도는 물론 요한은 아닐 것이다. 또 요한 아닌 다른 사도도 아닐 것이다. 왜냐하면 그 당시에 열두 사도 중 다른 사도들은 이미 다 세상을 떠났고 남은 자는 요한 한 사람뿐이었기 때문이다. 그러므로 사도를 시험했다는 말은 열두 사도 이후에도 또 사도가 있었다는 말인 것이다.</p>
+
+      <p>「그러나 너를 책망할 것이 있나니 너의 처음 사랑을 버렸느리라」<span class="inline-cite">계 2:4</span> 이 '처음'이라는 글자는 헬라어로는 Proten 이다. 이것은 곧 시간적으로 처음일 뿐 아니라 성질상으로도 처음이라는 뜻을 가지고 있다. 누가복음 15장에서 아버지가 탕자에게 '제일'좋은 옷을 입힌 그 '제일'과 같은 글자이다.</p>
+
+      <p>「만일 그리하지 아니하고 회개치 아니하면 내가 네게 임하여 네 촛대를 그 자리에서 옮기리라」<span class="inline-cite">계 2:5</span> 계시록 2,3장에서의 교회들은 예언의 교회일 뿐 아니라 실제로 당시의 아시아에 이 일곱 지방 교회가 있었다 기이한 것은 에베소 교회는 우리에게 역사를 알려주었을 뿐, 지금부터 일천여 년 전에 없어졌다는 것이다. 촛대는 이미 옮겨졌고 외형도 이미 사라졌다. 현재 고린도, 로마 등지에는 다 교회가 있으니 오직 에베소에만은 교회가 없다. 그가 회개하지 않았으므로 촛대는 옮겨진 것이다.</p>
+
+      <p>그러나 「한 가지 취할 것은 네가 니골라당의 행위를 미워한」것이다. 니골라당은 교회 역사 가운데에서 찾아볼 수 없다. 그것은 계시록이 예언의 책이기 때문이다. 그러므로 우리는 이 글자 속에 있는 뜻을 알아야 한다. 「니골라」는 헬라어에서 두 단어가 합하여 된 것이다. '니골'은 '정복', 혹은 '그 위에 있다'는 뜻이다. '라'는 '보통의 백성' '서민', 혹은 '평신도'라는 뜻이다. 그러므로 '니골라'는 곧 '평민을 정복한다.' 「평신도 위로 올라간다」는 뜻이다. 니골라당은 일부분의 사람들이 자기를 높여 보통 신도보다 높게 보는 것이다. 주님은 니골라당의 행위를 미워한다. 평신도 이상으로 올라가려는 이러한 행위를 주님은 기뻐하지 않으신다. 이러한 계급적인 행위는 주님이 미워하시는 일 가운데 하나다. 그러나 그 당시는 이런 행위만 있었을 뿐 그것이 교훈이 되지 못했다.</p>
+
+      <p>신약 안에 있는 하나의 기본 원칙은 곧 하나님의 모든 자녀들이 다 하나님의 제사장이라는 것이다. 하나님께서는 출애굽기 19장에서 이스라엘 백성을 불러 말씀하시기를</p>
+
+      <div class="quote-block">
+        <p>세계가 다 내게 속하였나니 너희가 내 말을 잘 듣고 내 언약을 지키면 너희는 열국 중에서 내 소유가 되겠고 너희가 내게 대하여 제사장 나라가 되며 거룩한 백성이 되리라 너는 이 말을 이스라엘 자손에게 고할찌니라</p>
+        <span class="cite">출애굽기 19:5—6</span>
+      </div>
+
+      <p>하나님이 처음에 정하신 것은 온 백성이 제사장 나라가 되는 것이다. 그러나 얼마 안 가서 금송아지를 숭배하는 일이 발생했다. 모세는 돌판을 깨뜨리고 여호와의 편에 설 사람은 손을 들어 그들의 형제를 죽이라고 말했다. 그때 레위 자손들이 하나님 편에 섰다. 결국 그 날 이스라엘 백성 중에 삼천 명이 죽인 바 되었다.</p>
+
+      <div class="quote-block">
+        <p>모세가 본즉 백성이 방자하니 이는 아론이 그들로 방자하게 하여 원수에게 조롱거리가 되게 하였음이라<br>
+        이에 모세가 진 문에 서서 가로되 누구든지 여호와의 편에 있는 자는 내게로 나아오라 하매 레위 자손이 다 모여 그에게로 오는지라<br>
+        모세가 그들에게 이르되 이스라엘의 하나님 여호와께서 이같이 말씀하시기를 너희는 각각 허리에 칼을 차고 진 이 문에서 저 문까지 왕래하며 각 사람이 그 형제를, 각 사람이 그 친구를, 각 사람이 그 이웃을 도륙하라 하셨느니라<br>
+        레위 자손이 모세의 말대로 행하매 이 날에 백성 중에 삼천 명 가량이 죽인 바 된지라<br>
+        모세가 이르되 각 사람이 그 아들과 그 형제를 쳤으니 오늘날 여호와께 헌신하게 되었느니라 그가 오늘날 너희에게 복을 내리시리라</p>
+        <span class="cite">출애굽기 32:25—29</span>
+      </div>
+
+      <p>그 후로 오직 레위 지파만이 제사장이 될 수 있었다. 곧 제사장 나라에서 제사장 지파로 축소된 것이다. 그들을 제외한 이스라엘 백성들은 제사장이 될 수 없었고 레위인들이 그들 대신 제사장 노릇을 했다. 그러므로 구약 시대의 제사장 계급은 중간 계급이었다. 그러나 신약에서 베드로는 「너희는 택하신 족속이요 왕 같은 재사장들이요 거룩한 나라요 그의 소유된 백성이니」<span class="inline-cite">벧전 2:9</span>라고 말한다. 우리 온 교회가 다 제사장이 되는 것이 바로 하나님의 처음의 뜻으로 돌아가는 것이다. 피로 씻음을 받은 수가 곧 제사장의 수이다. 제사장은 하나님의 일을 보는 사람이므로 모든 성도가 다 하나님의 일을 보는 것이며 교회 안에 중간 계급이란 있을 수 없다. 교회 안의 대제사장은 오직 주 예수뿐이다. 교회가 변질되기 전에는 모든 성도들이 다 하나님의 일을 했다. 그러나 사도 시대 이후부터 변하기 시작했다. 로마 천주교가 시작될 때(버가모 교회 시대), 구원받는 사람들은 적었으나 세례 받는 사람들이 많아 교회에 믿지 않는 사람들이 가득했다. 이리하여 한 무리의 사람들을 택하여 영적 일을 관리하게 되었다. 이렇게 「성직」계급이 발생되어 하나님의 뜻을 위반한 것이다. 하나님은 모든 성도가 다 영적 일을 하기 원하신다. 로마 천주교에서는 떡을 나누고 안수하고 세례 주는 일들을 다 신부가 한다. 심지어 결혼식이나 장례식의 주관까지도 성직자들만이 하도록 되어 있다. 개신교에서는 목사이다. 병에는 의사를, 송사에는 변호사를, 영적 일에는 목사를 부른다. 자신은 전적으로 세상일만 하는 것이다. 그러나 우리가 기억해야 할 것은 도교에는 도사가 있어 신도를 대신해 경문을 읽고, 유대교에는 제사장이 있어 하나님의 일을 하지만 교회에는 이러한 중간 계급이 있을 수 없다는 것이다. 왜냐하면 우리가 다 제사장이기 때문이다.</p>
+
+      <p>우리가 이십여 년이래 계속 부르짖은 것은 「보편적인 제사장 직분」이다. 아벨도 능히 제사를 드렸고 노아도 할 수 있었다. 이스라엘 백성들도 처음에는 능히 했다. 그러나 금송아지를 숭배하는 일이 생긴 후로 자신이 제사를 드릴 수 없게 된 것이다. 하나님께서는 모든 성도들이 직접 하나님 앞에 나올 수 있다고 말씀하셨다. 그러나 현재 기성 교회에는 중간 계급이 있다. 누가 그러한 교파의 집회에 자유롭게 일어나 간증할 수 있겠는가? 그것은 어려운 일이다. 그러한 교회 가운데 니골라당이다. 기독교는 이미 유대교로 변했다. 이 중간 계급을 거절하는 것이 주님이 기뻐하시는 것이다. 만일 당신이 피로 씻음을 받았다면 당신은 직접 영적 일에 참여할 수 있다. 교회는 이 근거 위에서 성립되는 것이며 그렇지 않은 것은 유대의 권위에 대한 문제이다. 오늘 이 세상에서 교회는 세 종류로 나뉘어져 있다. 그 한 종류는 세계교, 곧 로마 천주교요, 또 한 종류는 국교, 곧 루터회, 성공회 등이다. 나머지 한 종류는 독립교 곧 감리교, 장로교 등이다. 로마 천주교 안에는 신부 제도가 있고, 성공회 안에는 성직 제도가 있으며 독립교 안에는 목사 제도가 있다. 이들은 다 중간 계급으로 영적 일을 도맡아 하는 사람들이다. 그러나 하나님이 세우시는 것은 오직 완전한 복음이 들어 온, 중간 계급이 없는 교회이다. 완전한 복음이 올 때 부서지는 것은 모두 교회라 할 수 없다.</p>
+
+      <p>「귀 있는 자는 성령이 교회들에게 하시는 말씀을 들을지어다」<span class="inline-cite">계 2:7</span> 주님께서는 일곱 교회에 대하여 동일하게 말씀을 하셨다. 에베소 교회만 들으라는 것이 아니고 모든 교회가 다 들으라는 것이다.</p>
+
+      <p>「이기는 그에게는 내가 하나님의 낙원에 있는 생명나무의 과실을 주어 먹게 하리라」<span class="inline-cite">계 2:7</span> 하나님의 사람에 대한 처음의 목적은 곧 생명나무의 과실을 주어 먹게 하는 것이었다. 지금도 하나님이 말씀하시는 것은 우리가 직접 그의 앞에 와서 하나님의 처음의 목적대로 하라는 것이다. 문제는 생명나무가 무엇이냐에 있지 않고 당신이 하나님의 처음의 목적 — 하나님의 낙원에 있는 생명나무의 과실을 먹는 것 — 을 원하느냐 원치 않느냐에 달려 있는 것이다. 오직 이기는 자들만이 먹을 수 있다. 누구든지 하나님의 처음의 목적과 요구로 돌아오는 자는 다 이기는 자이다.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <svg class="footer-mark" viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="var(--gold-dim)" stroke-width="4" stroke-linecap="round">
+      <line x1="160" y1="232" x2="160" y2="70"/>
+      <path d="M160 190 C 120 190, 100 170, 100 130 C 100 100, 118 84, 118 70"/>
+      <path d="M160 190 C 200 190, 220 170, 220 130 C 220 100, 202 84, 202 70"/>
+      <path d="M160 210 C 90 210, 62 180, 62 140 C 62 105, 84 88, 84 70"/>
+      <path d="M160 210 C 230 210, 258 180, 258 140 C 258 105, 236 88, 236 70"/>
+      <path d="M160 170 C 138 170, 128 155, 128 130 C 128 108, 140 92, 140 70"/>
+      <path d="M160 170 C 182 170, 192 155, 192 130 C 192 108, 180 92, 180 70"/>
+    </g>
+  </svg>
+  <p>교회의 정통 · 워치만 리</p>
+</footer>
+
+<script>
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(el){ el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+</script>
+
+</body>
+</html>
