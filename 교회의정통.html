@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>교회의 정통 | Watchman Nee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #0b0c0e;
+    --ink-2: #14161a;
+    --parchment: #ece3d0;
+    --parchment-dim: #b9ae98;
+    --bronze: #c99a4d;
+    --bronze-dim: #8a6d3a;
+    --ember: #8f4a3a;
+    --line: rgba(201,154,77,0.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--parchment);
+    font-family:'Noto Serif KR', serif;
+    line-height:1.8;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    min-height:100svh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:6vh 6vw;
+    overflow:hidden;
+  }
+  #flameCanvas{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    opacity:0.5;
+    pointer-events:none;
+  }
+  .hero-content{position:relative;z-index:2;}
+  .eyebrow{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:12px;
+    letter-spacing:0.5em;
+    color:var(--bronze);
+    text-transform:uppercase;
+    margin-bottom:28px;
+    opacity:0.85;
+  }
+  .title-main{
+    font-weight:900;
+    font-size:clamp(52px, 11vw, 128px);
+    letter-spacing:0.06em;
+    color:var(--parchment);
+    text-shadow: 0 0 60px rgba(201,154,77,0.18);
+    line-height:1.05;
+  }
+  .title-sub{
+    margin-top:22px;
+    font-family:'Noto Sans KR', sans-serif;
+    font-weight:300;
+    font-size:clamp(14px, 2vw, 18px);
+    color:var(--parchment-dim);
+    letter-spacing:0.08em;
+  }
+  .title-rule{
+    width:56px;
+    height:1px;
+    background:var(--bronze);
+    margin:34px auto;
+    opacity:0.6;
+  }
+  .title-author{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:13px;
+    letter-spacing:0.25em;
+    color:var(--bronze-dim);
+  }
+  .scroll-cue{
+    position:absolute;
+    bottom:38px;
+    left:50%;
+    transform:translateX(-50%);
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:11px;
+    letter-spacing:0.3em;
+    color:var(--parchment-dim);
+    opacity:0.55;
+    z-index:2;
+  }
+
+  /* ---------- SECTION shells ---------- */
+  section{
+    position:relative;
+    padding:110px 8vw;
+    max-width:920px;
+    margin:0 auto;
+  }
+  .section-label{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:12px;
+    letter-spacing:0.4em;
+    color:var(--bronze);
+    text-transform:uppercase;
+    margin-bottom:20px;
+  }
+  .section-title{
+    font-weight:700;
+    font-size:clamp(26px, 4vw, 36px);
+    color:var(--parchment);
+    margin-bottom:36px;
+  }
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity 0.9s ease, transform 0.9s ease;
+  }
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- INTRO ---------- */
+  .intro-lede{
+    font-size:19px;
+    color:var(--parchment);
+    font-weight:400;
+    margin-bottom:22px;
+  }
+  .intro-body{
+    font-size:16px;
+    color:var(--parchment-dim);
+    font-weight:300;
+  }
+  .intro-body + .intro-body{margin-top:16px;}
+
+  /* ---------- CHAPTER LIST ---------- */
+  .chapters{
+    list-style:none;
+    border-top:1px solid var(--line);
+  }
+  .chapters li{
+    border-bottom:1px solid var(--line);
+  }
+  .chapters a{
+    display:flex;
+    align-items:baseline;
+    gap:28px;
+    padding:26px 6px;
+    transition:padding-left 0.35s ease, background 0.35s ease;
+  }
+  .chapters a:hover, .chapters a:focus-visible{
+    padding-left:16px;
+    background:linear-gradient(90deg, rgba(201,154,77,0.07), transparent);
+    outline:none;
+  }
+  .chapters a:focus-visible{
+    box-shadow: inset 0 0 0 1px var(--bronze);
+  }
+  .ch-num{
+    font-family:'Noto Sans KR', sans-serif;
+    font-weight:300;
+    font-size:14px;
+    color:var(--bronze-dim);
+    letter-spacing:0.05em;
+    min-width:52px;
+  }
+  .ch-name{
+    flex:1;
+    font-size:clamp(19px, 2.6vw, 24px);
+    font-weight:500;
+    color:var(--parchment);
+  }
+  .ch-verse{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:12px;
+    color:var(--parchment-dim);
+    letter-spacing:0.03em;
+    white-space:nowrap;
+  }
+  .ch-arrow{
+    font-family:'Noto Sans KR', sans-serif;
+    color:var(--bronze);
+    font-size:16px;
+    opacity:0.7;
+  }
+  .chapters li.bookend .ch-name{
+    font-style:normal;
+    color:var(--parchment-dim);
+  }
+
+  /* ---------- BACKGROUND (essay) ---------- */
+  .bg-intro{
+    font-size:16px;
+    color:var(--parchment-dim);
+    font-weight:300;
+    margin-bottom:52px;
+  }
+  .bg-card{
+    border-left:2px solid var(--bronze-dim);
+    padding:6px 0 6px 28px;
+    margin-bottom:48px;
+  }
+  .bg-card:last-child{margin-bottom:0;}
+  .bg-card h3{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:13px;
+    letter-spacing:0.15em;
+    color:var(--bronze);
+    text-transform:uppercase;
+    font-weight:500;
+    margin-bottom:14px;
+  }
+  .bg-card p{
+    font-size:15.5px;
+    color:var(--parchment-dim);
+    font-weight:300;
+  }
+  .bg-card p + p{margin-top:12px;}
+  .bg-card .quote{
+    display:block;
+    margin-top:16px;
+    color:var(--parchment);
+    font-weight:500;
+    font-size:16px;
+    padding-left:16px;
+    border-left:1px solid var(--ember);
+  }
+  .bg-card ul{
+    list-style:none;
+    margin-top:10px;
+  }
+  .bg-card ul li{
+    font-size:15px;
+    color:var(--parchment-dim);
+    font-weight:300;
+    padding-left:16px;
+    position:relative;
+    margin-top:6px;
+  }
+  .bg-card ul li::before{
+    content:"—";
+    position:absolute;
+    left:0;
+    color:var(--bronze-dim);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    text-align:center;
+    padding:70px 8vw 90px;
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:12px;
+    letter-spacing:0.15em;
+    color:var(--parchment-dim);
+    opacity:0.6;
+  }
+
+  @media (max-width:520px){
+    section{padding:80px 7vw;}
+    .chapters a{gap:16px;padding:22px 4px;}
+    .ch-verse{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <canvas id="flameCanvas"></canvas>
+  <div class="hero-content">
+    <div class="eyebrow">계시록 이장 삼장 · 일곱 교회</div>
+    <h1 class="title-main">교회의<br>정통</h1>
+    <p class="title-sub">正統 — 하나님이 보시는 교회를 찾아서</p>
+    <div class="title-rule"></div>
+    <p class="title-author">워치만 니 · 1945, 중국 충칭</p>
+  </div>
+  <div class="scroll-cue">S C R O L L</div>
+</div>
+
+<section id="intro">
+  <div class="reveal">
+    <p class="section-label">이 책에 대하여</p>
+    <p class="intro-lede">「교회의 정통」은 워치만 니(Watchman Nee)가 1945년 중국 충칭에서 요한계시록 2~3장, 일곱 교회에 보낸 편지를 강해한 말씀 집회의 기록입니다.</p>
+    <p class="intro-body">이 책은 서재에서 체계적으로 집필된 신학 논문이 아니라, 전쟁으로 무너진 시대 한복판에서 선포된 메시지를 기록하고 정리한 것입니다. 그래서 단순한 교회사 해설로 읽기보다, 그 시대의 교회를 향해 주어진 하나님의 현재적 말씀으로 읽을 때 본래의 깊이가 드러납니다.</p>
+    <p class="intro-body">아래 아홉 편은 서문에서 시작하여 에베소·서머나·버가모·두아디라·사데·빌라델비아·라오디게아, 일곱 교회를 차례로 지나 결론에 이르는 원래의 순서를 그대로 따릅니다.</p>
+  </div>
+</section>
+
+<section id="chapters">
+  <div class="reveal">
+    <p class="section-label">차례</p>
+    <p class="section-title">아홉 편의 기록</p>
+  </div>
+  <ul class="chapters reveal">
+    <li class="bookend"><a href="교회의정통-서문.html"><span class="ch-num">01</span><span class="ch-name">서문</span><span class="ch-arrow">→</span></a></li>
+    <li><a href="교회의정통-에베소교회.html"><span class="ch-num">02</span><span class="ch-name">에베소교회</span><span class="ch-verse">계 2:1–7</span><span class="ch-arrow">→</span></a></li>
+    <li><a href="교회의정통-서머나교회.html"><span class="ch-num">03</span><span class="ch-name">서머나교회</span><span class="ch-verse">계 2:8–11</span><span class="ch-arrow">→</span></a></li>
+    <li><a href="교회의정통-버가모교회.html"><span class="ch-num">04</span><span class="ch-name">버가모교회</span><span class="ch-verse">계 2:12–17</span><span class="ch-arrow">→</span></a></li>
+    <li><a href="교회의정통-두아디라교회.html"><span class="ch-num">05</span><span class="ch-name">두아디라교회</span><span class="ch-verse">계 2:18–29</span><span class="ch-arrow">→</span></a></li>
+    <li><a href="교회의정통-사데교회.html"><span class="ch-num">06</span><span class="ch-name">사데교회</span><span class="ch-verse">계 3:1–6</span><span class="ch-arrow">→</span></a></li>
+    <li><a href="교회의정통-빌라델비아교회.html"><span class="ch-num">07</span><span class="ch-name">빌라델비아교회</span><span class="ch-verse">계 3:7–13</span><span class="ch-arrow">→</span></a></li>
+    <li><a href="교회의정통-라오디게아교회.html"><span class="ch-num">08</span><span class="ch-name">라오디게아교회</span><span class="ch-verse">계 3:14–22</span><span class="ch-arrow">→</span></a></li>
+    <li class="bookend"><a href="교회의정통-결론.html"><span class="ch-num">09</span><span class="ch-name">결론</span><span class="ch-arrow">→</span></a></li>
+  </ul>
+</section>
+
+<section id="background">
+  <div class="reveal">
+    <p class="section-label">시대적 배경</p>
+    <p class="section-title">이 말씀이 선포된 자리</p>
+    <p class="bg-intro">「교회의 정통」을 이해하려면 교리의 내용보다 먼저, 이 말씀이 선포되던 시대의 공기를 보아야 합니다. 이 메시지는 추상적인 신학이 아니라 매우 실제적인 역사 속에서 터져 나온 절박한 외침이기 때문입니다.</p>
+  </div>
+
+  <div class="bg-card reveal">
+    <h3>형성 시기</h3>
+    <p>이 저작은 워치만 니가 1945년 중국 충칭(重慶)에서 전한 요한계시록 2~3장 강해 메시지에서 시작됩니다.</p>
+    <ul>
+      <li>1945년 — 실제 메시지 선포</li>
+      <li>1945년 말 — 초기 기록 및 인쇄</li>
+      <li>이후 — 편집·정리되어 책 형태로 출판</li>
+    </ul>
+  </div>
+
+  <div class="bg-card reveal">
+    <h3>책의 성격</h3>
+    <p>「교회의 정통」은 일반적인 의미의 "저술"이라기보다 말씀 집회에서 선포된 영적 메시지의 기록물입니다. 그래서 이 책은 논문처럼 체계적으로 집필된 것이 아니라, 현장에서 성령의 빛 가운데 풀어낸 해석을 기록하고 정리한 형태입니다.</p>
+    <p>단순한 교회사 해석이 아니라, 그 시대 교회를 향한 하나님의 현재적 말씀으로 읽어야 깊이 이해됩니다.</p>
+  </div>
+
+  <div class="bg-card reveal">
+    <h3>전쟁 직후의 혼란한 중국</h3>
+    <p>이 책의 배경은 1945년, 제2차 세계대전과 중일전쟁(Second Sino-Japanese War) 직후의 중국입니다. 당시 중국은 도시와 사회가 크게 파괴되고, 사람들은 생존 자체에 몰려 있었으며, 가치관과 질서가 무너진 상태였습니다.</p>
+    <p>특히 충칭은 전쟁 기간 동안 임시 수도로서 폭격과 피난, 정치적 긴장이 끊이지 않았던 도시였습니다.</p>
+  </div>
+
+  <div class="bg-card reveal">
+    <h3>교회의 외적 성장 vs 내적 혼란</h3>
+    <p>전쟁 이후, 아이러니하게도 교회는 사람들의 불안과 고통 속에서 숫자는 늘어났습니다.</p>
+    <p>그러나 동시에 신앙은 피상적이 되고, 교회는 점점 조직과 형식 중심으로 흐르며, 서구 선교사 영향 아래 교단 분열이 심해졌습니다. 즉, 겉으로는 성장, 안으로는 혼란이라는 상태였습니다.</p>
+  </div>
+
+  <div class="bg-card reveal">
+    <h3>서구 교단 체계의 유입과 갈등</h3>
+    <p>당시 중국 교회는 장로교, 감리교, 침례교 등 다양한 서구 교단이 들어오면서 각기 다른 교리, 조직, 전통을 가지고 서로 나뉘어 있었습니다.</p>
+    <span class="quote">"교회가 이렇게 나뉘는 것이 과연 성경적인가?" — 워치만 니</span>
+  </div>
+
+  <div class="bg-card reveal">
+    <h3>'참된 교회'에 대한 갈급함</h3>
+    <p>워치만 니는 이 시대 속에서 단순히 교리를 정리하려 한 것이 아니라, "하나님이 보시는 교회는 무엇인가?", "진짜 교회는 어디에 있는가?" 이 질문을 붙들었습니다.</p>
+    <p>그래서 그는 교단이 아닌 그리스도의 몸, 조직이 아닌 생명, 전통이 아닌 계시를 기준으로 교회를 다시 보게 됩니다.</p>
+  </div>
+</section>
+
+<footer>교회의 정통 &nbsp;·&nbsp; WATCHMAN NEE, 1945</footer>
+
+<script>
+// ---- scroll reveal ----
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:0.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// ---- ambient candle / lampstand flame canvas (seven flames, subordinate to content) ----
+const canvas = document.getElementById('flameCanvas');
+const ctx = canvas.getContext('2d');
+let w, h;
+function resize(){
+  w = canvas.width = canvas.offsetWidth;
+  h = canvas.height = canvas.offsetHeight;
+}
+resize();
+window.addEventListener('resize', resize);
+
+const FLAME_COUNT = 7;
+const flames = Array.from({length: FLAME_COUNT}, (_, i) => ({
+  xRatio: (i + 0.5) / FLAME_COUNT,
+  baseY: 0,
+  phase: Math.random() * Math.PI * 2,
+  speed: 0.006 + Math.random() * 0.004,
+  drift: 6 + Math.random() * 6,
+  size: 34 + Math.random() * 22
+}));
+
+let t = 0;
+function draw(){
+  t += 1;
+  ctx.clearRect(0, 0, w, h);
+  const groundY = h * 0.92;
+
+  flames.forEach(f => {
+    const x = f.xRatio * w + Math.sin(t * f.speed + f.phase) * f.drift;
+    const flicker = 0.75 + Math.sin(t * f.speed * 3 + f.phase) * 0.25;
+    const y = groundY;
+    const size = f.size * flicker;
+
+    const grad = ctx.createRadialGradient(x, y - size * 0.6, 1, x, y - size * 0.6, size);
+    grad.addColorStop(0, 'rgba(255, 214, 140, 0.55)');
+    grad.addColorStop(0.35, 'rgba(201, 154, 77, 0.28)');
+    grad.addColorStop(1, 'rgba(201, 154, 77, 0)');
+
+    ctx.fillStyle = grad;
+    ctx.beginPath();
+    ctx.ellipse(x, y - size * 0.6, size * 0.5, size, 0, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.strokeStyle = 'rgba(180, 138, 70, 0.18)';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x, y + 14);
+    ctx.stroke();
+  });
+
+  requestAnimationFrame(draw);
+}
+draw();
+</script>
+
+</body>
+</html>
