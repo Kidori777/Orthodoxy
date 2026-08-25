@@ -3,528 +3,488 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>빌라델비아교회 — 교회 역사의 계통표</title>
+<title>교회의 정통 · 빌라델비아 교회 — 워치만 리</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg-deep:#14110c;
-    --bg-deep-2:#1b1710;
-    --bg-deep-3:#211c13;
-    --parchment:#f2e8d1;
-    --parchment-2:#e8dab3;
-    --ink:#2b2013;
-    --ink-soft:#5c4b30;
-    --ink-faint:#8a7955;
-    --gold:#b3873f;
-    --gold-bright:#d9ac54;
-    --rust:#8a3626;
-    --rust-soft:#a9503c;
-    --amber:#c08a3e;
-    --grey:#7c7364;
-    --hair:rgba(179,135,63,0.28);
+    --bg: #0a0b0f;
+    --bg-deep: #06070a;
+    --panel: #12141b;
+    --panel-line: #262a34;
+    --gold: #c6a15b;
+    --gold-bright: #ecc97a;
+    --gold-dim: #8a7442;
+    --ink: #ece7d9;
+    --ink-soft: #b3ac9a;
+    --ink-faint: #726c5c;
+    --serif: 'Noto Serif KR', serif;
+    --sans: 'Noto Sans KR', sans-serif;
   }
 
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
   body{
-    margin:0;
-    background:var(--bg-deep);
-    color:var(--parchment);
-    font-family:'Noto Serif KR', serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  img,svg{display:block;max-width:100%;}
-  a{color:inherit;}
-
-  .eyebrow{
-    font-family:'Noto Sans KR', sans-serif;
-    font-size:12.5px;
-    letter-spacing:0.28em;
-    font-weight:600;
-    color:var(--gold-bright);
-    text-transform:uppercase;
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--serif);
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
-  /* ---------- paper grain ---------- */
-  .grain{
-    position:absolute;inset:0;
-    pointer-events:none;
-    opacity:0.05;
-    mix-blend-mode:overlay;
+  ::selection{ background: var(--gold-dim); color: #0a0b0f; }
+
+  main{
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 8vh 6vw 4vh;
   }
 
-  /* ---------- HERO ---------- */
-  .doc-title{
-    background:var(--parchment);
-    text-align:center;
-    padding:64px 24px 8px;
+  .series-tag{
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-family: var(--sans);
+    font-size: .74rem;
+    letter-spacing: .26em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+    margin-bottom: 3.4rem;
   }
-  .doc-title h1{
-    font-family:'Noto Serif KR', serif;
-    font-weight:700;
-    font-size:clamp(26px, 4vw, 34px);
-    color:var(--ink);
-    margin:0;
-    letter-spacing:0.02em;
-  }
-  .doc-subtitle{
-    background:var(--parchment);
-    text-align:center;
-    padding:8px 24px 48px;
-  }
-  .doc-subtitle h2{
-    font-family:'Noto Serif KR', serif;
-    font-weight:700;
-    font-size:clamp(18px, 2.6vw, 22px);
-    color:var(--ink);
-    margin:0;
-    display:inline-block;
-    border-bottom:2px solid var(--ink);
-    padding-bottom:4px;
+  .series-tag::before{
+    content: '';
+    width: 22px; height: 1px;
+    background: var(--gold-dim);
+    display: inline-block;
   }
 
-  .epigraph-section{
-    background:var(--parchment);
-    padding:0 24px 40px;
-  }
-  .epigraphs{
-    max-width:700px;
-    margin:0 auto;
-  }
-  .epigraph{
-    margin-bottom:26px;
-  }
-  .epigraph p{
-    font-family:'Noto Serif KR', serif;
-    font-size:16.5px;
-    line-height:2.05;
-    color:#3a2c18;
-    margin:0 0 8px;
-  }
-  .epigraph cite{
-    font-style:normal;
-    font-family:'Noto Sans KR', sans-serif;
-    font-size:12.5px;
-    letter-spacing:0.06em;
-    color:var(--ink-soft);
+  .chapter{
+    padding: 3.5rem 0 4.5rem;
   }
 
-  /* ---------- CHART SECTION ---------- */
-  .chart-section{
-    background:var(--parchment);
-    padding:0 20px 8px;
+  .chapter-head{ margin-bottom: 2.6rem; }
+
+  .lamp-row{
+    display: flex;
+    gap: .55rem;
+    margin-bottom: 1.6rem;
+  }
+  .lamp{
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid var(--panel-line);
+  }
+  .lamp.lit{
+    background: var(--gold-bright);
+    border-color: var(--gold-bright);
+    box-shadow: 0 0 9px 1px rgba(236,201,122,.5);
+  }
+
+  .chip{
+    font-family: var(--sans);
+    font-size: .72rem;
+    letter-spacing: .1em;
+    color: var(--gold-dim);
+    border: 1px solid var(--panel-line);
+    border-radius: 999px;
+    padding: .3rem .7rem;
+    white-space: nowrap;
+    display: inline-block;
+    margin-bottom: 1.1rem;
+  }
+
+  .chapter-head h1{
+    font-family: var(--serif);
+    font-weight: 900;
+    font-size: clamp(2.1rem, 6.4vw, 3.4rem);
+    margin: 0 0 .6rem;
+    line-height: 1.15;
+  }
+  .chapter-head h1 span{
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold) 60%, var(--gold-dim));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .chapter-eyebrow{
+    font-family: var(--sans);
+    font-size: .8rem;
+    letter-spacing: .18em;
+    color: var(--ink-faint);
+  }
+
+  .chart-panel{
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-left: 3px solid var(--gold-dim);
+    border-radius: 4px;
+    padding: 1.6rem clamp(1rem, 3.4vw, 1.8rem) 1.2rem;
+    margin: 0 0 3rem;
+  }
+  .chart-panel .chart-caption{
+    font-family: var(--sans);
+    font-size: .78rem;
+    letter-spacing: .06em;
+    color: var(--ink-faint);
+    line-height: 1.8;
+    margin: .9rem 0 0;
   }
   .chart-scroll{
-    overflow-x:auto;
-    padding:8px 4px;
-    -webkit-overflow-scrolling:touch;
+    overflow-x: hidden;
   }
   .chart-scroll svg{
-    width:100%;
-    height:auto;
-    margin:0 auto;
-    display:block;
-  }
-  @media (min-width:640px){
-    .chart-scroll svg{min-width:640px;}
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
 
-  /* ---------- READING ---------- */
-  .page{
-    background:var(--parchment);
-    color:var(--ink);
-    position:relative;
+  .scripture-panel{
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-left: 3px solid var(--gold-dim);
+    border-radius: 4px;
+    padding: 2.2rem clamp(1.2rem, 4vw, 2.2rem);
+    margin: 0 0 3rem;
   }
-  .page::before{
-    content:"";
-    position:absolute;inset:0;
-    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity:0.045;
-    mix-blend-mode:multiply;
-    pointer-events:none;
+  .scripture-panel p{
+    font-size: 1rem;
+    line-height: 2.1;
+    color: var(--ink-soft);
+    margin: 0;
   }
-
-  .article{
-    position:relative;
-    max-width:700px;
-    margin:0 auto;
-    padding:0 24px;
-  }
-
-  .section{
-    padding:84px 0;
-    border-bottom:1px solid rgba(43,32,19,0.12);
-  }
-  .section:last-of-type{border-bottom:none;}
-  .section .eyebrow{color:var(--rust-soft);margin-bottom:16px;display:block;}
-  .section h3{
-    font-size:clamp(24px,4vw,32px);
-    font-weight:700;
-    color:var(--ink);
-    margin:0 0 34px;
-    line-height:1.4;
-  }
-  .section p{
-    font-size:16.5px;
-    line-height:2.05;
-    color:#3a2c18;
-    margin:0 0 26px;
-    letter-spacing:0.001em;
-  }
-  .section p:last-child{margin-bottom:0;}
-
-  .pull{
-    margin:40px 0;
-    padding:26px 28px;
-    background:var(--parchment-2);
-    border-left:3px solid var(--gold);
-    font-size:16.5px;
-    line-height:1.95;
-    color:var(--ink);
-  }
-  .pull cite{
-    display:block;
-    font-style:normal;
-    font-family:'Noto Sans KR', sans-serif;
-    font-size:12px;
-    letter-spacing:0.12em;
-    color:var(--ink-soft);
-    margin-top:12px;
+  .scripture-panel .verse-tag{
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: .72rem;
+    letter-spacing: .06em;
+    color: var(--gold-bright);
+    background: rgba(198,161,91,0.10);
+    border: 1px solid var(--gold-dim);
+    border-radius: 3px;
+    padding: .1rem .5rem;
+    margin-left: .4rem;
+    white-space: nowrap;
   }
 
-  .verse-tag{
-    display:inline-block;
-    font-family:'Noto Sans KR', sans-serif;
-    font-size:12px;
-    font-weight:600;
-    letter-spacing:0.1em;
-    color:var(--bg-deep);
-    background:var(--gold);
-    padding:4px 10px;
-    border-radius:2px;
-    margin-bottom:16px;
+  .prose p{
+    font-size: 1.06rem;
+    line-height: 2.05;
+    color: var(--ink);
+    margin: 0 0 1.7rem;
+    font-weight: 400;
   }
 
-  .divider{
-    display:flex;
-    align-items:center;
-    gap:14px;
-    margin:0 0 32px;
-    color:var(--gold);
+  .dropcap::first-letter{
+    font-family: var(--serif);
+    font-weight: 900;
+    font-size: 3.2rem;
+    line-height: .78;
+    float: left;
+    margin: .1rem .55rem 0 0;
+    color: var(--gold-bright);
   }
-  .divider svg{width:20px;height:20px;flex:none;}
-  .divider .line{flex:1;height:1px;background:linear-gradient(90deg, var(--hair), transparent);}
+
+  .quote-block{
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-left: 3px solid var(--gold-dim);
+    border-radius: 4px;
+    padding: 1.5rem 1.7rem;
+    margin: 0 0 1.8rem;
+  }
+  .quote-block p{
+    font-size: .98rem;
+    line-height: 1.95;
+    color: var(--ink-soft);
+    margin: 0 0 .8rem;
+  }
+  .quote-block p:last-child{ margin-bottom: 0; }
+  .quote-block .cite{
+    display: block;
+    font-family: var(--sans);
+    font-size: .75rem;
+    letter-spacing: .06em;
+    color: var(--gold-dim);
+    margin-top: .8rem;
+  }
+
+  .inline-cite{
+    font-family: var(--sans);
+    font-size: .88em;
+    letter-spacing: .01em;
+    color: var(--gold);
+  }
+
+  .stars-divider{
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+    padding: 1.4rem 0 2.6rem;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .9s ease, transform .9s ease;
+  }
+  .stars-divider.is-visible{ opacity: 1; transform: translateY(0); }
+  .stars-divider svg{ width: 9px; height: 9px; }
+  .stars-divider svg:nth-child(4){ width: 13px; height: 13px; }
 
   footer{
-    background:var(--bg-deep);
-    color:var(--ink-faint);
-    text-align:center;
-    padding:70px 24px 56px;
-    font-family:'Noto Sans KR', sans-serif;
-    font-size:13px;
-    letter-spacing:0.06em;
-    line-height:2;
+    text-align: center;
+    padding: 5rem 6vw 6rem;
+    border-top: 1px solid var(--panel-line);
+    margin-top: 2rem;
   }
-  footer .fkey{width:26px;height:26px;margin:0 auto 18px;opacity:0.6;}
+  .footer-mark{
+    width: 34px;
+    margin: 0 auto 1.2rem;
+    opacity: .7;
+  }
+  footer p{
+    font-family: var(--sans);
+    font-size: .78rem;
+    letter-spacing: .2em;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    margin: 0;
+  }
 
-  /* ---------- reveal ---------- */
-  /* Visible by default; JS below only ADDS a "pre-reveal" hidden state
-     to elements confirmed below the fold, so content never depends on
-     script execution to become readable. */
-  .reveal{
-    opacity:1;
-    transform:none;
-    transition:opacity 0.8s ease, transform 0.8s ease;
+  @media (max-width: 640px){
+    main{ padding: 7vh 7vw 3vh; }
+    .chapter{ padding: 2.4rem 0 3.2rem; }
+    .prose p, .scripture-panel p, .quote-block p{ line-height: 1.95; }
+    .scripture-panel{ padding: 1.7rem 1.2rem; }
+    .quote-block{ padding: 1.2rem 1.3rem; }
+    .chart-panel{ padding: 1.2rem 1rem 1rem; }
   }
-  .reveal.pre-reveal{opacity:0;transform:translateY(22px);}
-  .reveal.is-visible{opacity:1;transform:translateY(0);}
 
   @media (prefers-reduced-motion: reduce){
-    html{scroll-behavior:auto;}
-    .reveal{opacity:1 !important;transform:none !important;transition:none;}
-    .hero-glow{animation:none;}
-  }
-
-  @media (max-width:640px){
-    .hero{padding:76px 18px 56px;}
-    .section{padding:64px 0;}
-    .chart-section{padding:72px 16px 84px;}
+    *, *::before, *::after{
+      animation-duration: .001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .001ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 </style>
 </head>
 <body>
 
-<!-- ================= HERO ================= -->
-<!-- ================= TITLE ================= -->
-<section class="doc-title">
-  <h1>빌라델비아교회</h1>
-</section>
+<main>
+  <p class="series-tag">교회의 정통 · 워치만 리 · 일곱 교회</p>
 
-<!-- ================= CHART ================= -->
-<section class="chart-section">
-  <div class="chart-scroll">
-    <svg viewBox="0 0 1180 400" xmlns="http://www.w3.org/2000/svg">
-      <!-- box: 사도시대 | 에베소 | 서머나 -->
-      <rect x="20" y="240" width="420" height="50" fill="none" stroke="#2b2013" stroke-width="1.5"/>
-      <line x1="160" y1="240" x2="160" y2="290" stroke="#2b2013" stroke-width="1.5"/>
-      <line x1="300" y1="240" x2="300" y2="290" stroke="#2b2013" stroke-width="1.5"/>
-      <text x="90" y="271" font-family="Noto Serif KR" font-size="16" fill="#2b2013" text-anchor="middle">사도시대</text>
-      <text x="230" y="271" font-family="Noto Serif KR" font-size="16" fill="#2b2013" text-anchor="middle">에베소</text>
-      <text x="370" y="271" font-family="Noto Serif KR" font-size="16" fill="#2b2013" text-anchor="middle">서머나</text>
-
-      <!-- box: 버가모 | 두아디라 -->
-      <rect x="560" y="90" width="300" height="50" fill="none" stroke="#2b2013" stroke-width="1.5"/>
-      <line x1="710" y1="90" x2="710" y2="140" stroke="#2b2013" stroke-width="1.5"/>
-      <text x="635" y="121" font-family="Noto Serif KR" font-size="16" fill="#2b2013" text-anchor="middle">버가모</text>
-      <text x="785" y="121" font-family="Noto Serif KR" font-size="16" fill="#2b2013" text-anchor="middle">두아디라</text>
-
-      <!-- lines: 서머나 -> 버가모 box -->
-      <path d="M440,265 L560,115" fill="none" stroke="#2b2013" stroke-width="1.5"/>
-      <!-- top line: 두아디라 box -> 주님의 재림 -->
-      <line x1="860" y1="115" x2="1080" y2="115" stroke="#2b2013" stroke-width="1.5"/>
-      <text x="1090" y="120" font-family="Noto Serif KR" font-size="16" fill="#2b2013">주님의 재림</text>
-
-      <!-- branch: top line -> 사데 -->
-      <path d="M900,115 L1000,190" fill="none" stroke="#2b2013" stroke-width="1.5"/>
-      <text x="950" y="212" font-family="Noto Serif KR" font-size="16" fill="#2b2013" text-anchor="middle">사데</text>
-      <line x1="1000" y1="190" x2="1080" y2="190" stroke="#2b2013" stroke-width="1.5"/>
-      <text x="1090" y="195" font-family="Noto Serif KR" font-size="16" fill="#2b2013">주님의 재림</text>
-
-      <!-- dashed: 서머나 box -> 빌라델비아 -->
-      <line x1="440" y1="265" x2="800" y2="265" stroke="#2b2013" stroke-width="1.5" stroke-dasharray="8 7"/>
-      <text x="850" y="260" font-family="Noto Serif KR" font-size="16" fill="#2b2013" text-anchor="middle">빌라델비아</text>
-      <line x1="900" y1="265" x2="1080" y2="265" stroke="#2b2013" stroke-width="1.5"/>
-      <text x="1090" y="270" font-family="Noto Serif KR" font-size="16" fill="#2b2013">주님의 재림</text>
-
-      <!-- branch: 빌라델비아 line -> 라오디게아 -->
-      <path d="M900,265 L1000,340" fill="none" stroke="#2b2013" stroke-width="1.5"/>
-      <text x="950" y="362" font-family="Noto Serif KR" font-size="16" fill="#2b2013" text-anchor="middle">라오디게아</text>
-      <line x1="1000" y1="340" x2="1080" y2="340" stroke="#2b2013" stroke-width="1.5"/>
-      <text x="1090" y="345" font-family="Noto Serif KR" font-size="16" fill="#2b2013">주님의 재림</text>
-    </svg>
-  </div>
-</section>
-
-<!-- ================= SUBTITLE ================= -->
-<section class="doc-subtitle">
-  <h2>교회 역사의 계통표</h2>
-</section>
-
-<!-- ================= EPIGRAPHS ================= -->
-<section class="epigraph-section">
-  <div class="epigraphs">
-    <div class="epigraph">
-      <p>빌라델비아 교회의 사자에게 편지하기를 거룩하고 진실하사 다윗의 열쇠를 가지신 이 곧 열면 닫을 사람이 없고 닫으면 열 사람이 없는 그이가 가라사대 볼지어다 내가 네 앞에 열린 문을 두었으되 능히 닫을 사람이 없으리라 내가 네 행위를 아노니 네가 적은 능력을 가지고도 내 말을 지키며 내 이름을 배반치 아니하였도다 보라 사단의 회 곧 자칭 유대인이라 하나 그렇지 않고 거짓말 하는 자들 중에서 몇을 네게 주어 저희로 와서 네 발 앞에 절하게 하고 내가 너를 사랑하는 줄을 알게 하리라 네가 나의 인내의 말씀을 지켰은즉 내가 또한 너를 지키어 시험의 때를 면하게 하리니 이는 장차 온 세상에 임하여 땅에 거하는 자들을 시험할 때라 내가 속히 임하리니 네가 가진 것을 굳게 잡아 아무나 네 면류관을 빼앗지 못하게 하라 이기는 자는 내 하나님 성전에 기둥이 되게 하리니 그가 결코 다시 나가지 아니하리라 내가 하나님의 이름과 하나님의 성 곧 하늘에서 내 하나님께로부터 내려오는 새 예루살렘의 이름과 나의 새 이름을 그이 위에 기록하리라 귀 있는 자는 성령이 교회들에게 하시는 말씀을 들을찌어다</p>
-      <cite>계 3:7-13</cite>
+  <section class="chapter" id="philadelphia">
+    <div class="chapter-head">
+      <div class="lamp-row" aria-hidden="true">
+        <span class="lamp"></span><span class="lamp"></span><span class="lamp"></span>
+        <span class="lamp"></span><span class="lamp"></span><span class="lamp lit"></span><span class="lamp"></span>
+      </div>
+      <span class="chip">계 3:7—13 · 여섯째 교회</span>
+      <h1><span>빌라델비아</span> 교회</h1>
+      <p class="chapter-eyebrow">형제를 서로 사랑함 — 능히 닫을 자 없는 열린 문</p>
     </div>
-    <div class="epigraph">
-      <p>그러나 너희는 랍비라 칭함을 받지 말라 너희 선생은 하나요 너희는 다 형제니라 땅에 있는 자를 아비라 하지 말라 너희 아버지는 하나이시니 곧 하늘에 계신 자시니라 또한 지도자라 칭함을 받지 말라 너희 지도자는 하나이니 곧 그리스도니라 너희 중에 큰 자는 너희를 섬기는 자가 되어야 하리라</p>
-      <cite>마 23:8-11</cite>
-    </div>
-    <div class="epigraph">
-      <p>예수께서 이르시되 나를 만지지 말라 내가 아직 아버지께로 올라가지 못하였노라 너는 내 형제들에게 가서 이르되 내가 내 아버지 곧 너희 아버지, 내 하나님 곧 너희 하나님께로 올라간다 하라 하신대</p>
-      <cite>요20:17</cite>
-    </div>
-    <div class="epigraph">
-      <p>우리가 유대인이나 헬라인이나 종이나 자유자나 다 한 성령으로 세례를 받아 한 몸이 되었고 또 다 한 성령을 마시게 하셨느니라</p>
-      <cite>고전 12:13</cite>
-    </div>
-    <div class="epigraph">
-      <p>너희는 유대인이나 헬라인이나 종이나 자주자나 남자나 여자 없이 다 그리스도 예수 안에서 하나이니라</p>
-      <cite>갈 3:28</cite>
-    </div>
-  </div>
-</section>
 
+    <div class="chart-panel">
+      <div class="chart-scroll">
+        <svg viewBox="0 0 1180 400" xmlns="http://www.w3.org/2000/svg">
+          <rect x="20" y="240" width="420" height="50" fill="none" stroke="#8a7442" stroke-width="1.5"/>
+          <line x1="160" y1="240" x2="160" y2="290" stroke="#8a7442" stroke-width="1.5"/>
+          <line x1="300" y1="240" x2="300" y2="290" stroke="#8a7442" stroke-width="1.5"/>
+          <text x="90" y="271" font-family="Noto Serif KR" font-size="16" fill="#ece7d9" text-anchor="middle">사도시대</text>
+          <text x="230" y="271" font-family="Noto Serif KR" font-size="16" fill="#ece7d9" text-anchor="middle">에베소</text>
+          <text x="370" y="271" font-family="Noto Serif KR" font-size="16" fill="#ece7d9" text-anchor="middle">서머나</text>
 
-<!-- ================= READING ================= -->
-<div class="page">
-<div class="article">
+          <rect x="560" y="90" width="300" height="50" fill="none" stroke="#8a7442" stroke-width="1.5"/>
+          <line x1="710" y1="90" x2="710" y2="140" stroke="#8a7442" stroke-width="1.5"/>
+          <text x="635" y="121" font-family="Noto Serif KR" font-size="16" fill="#ece7d9" text-anchor="middle">버가모</text>
+          <text x="785" y="121" font-family="Noto Serif KR" font-size="16" fill="#ece7d9" text-anchor="middle">두아디라</text>
 
-  <section class="section reveal">
-    <span class="eyebrow">계통표 개관</span>
-    <h3>사도 시대에서 빌라델비아까지</h3>
-    <p>여기에 우리의 이해를 돕기 위해 계통표를 그려 놓았다. 제일 첫 단계는 사도 시대의 교회를 대표한다. 에베소는 이미 느슨해진 교회이지만 에베소 교회가 사도 시대의 교회를 이어 온 것임을 주님께서 승인하시므로 여전히 같은 선 위에 있다. 그리고 서머나가 와서 다시 이어 갔다. 서머나는 참으로 고난을 받은 교회였다. 칭찬도 없고 책망도 없다. 서머나 이후 발생한 한 가지 사건은 버가모가 온 것이다. 버가모는 사도 시대의 정통을 계속하지 않고 세상과 연합하여 곁길로 갔다. 그는 서머나 교회에 이어 내려왔지만 사도 시대 교회의 정통을 계속한 것은 아니다.</p>
-    <p>버가모로부터 커다란 전환이 있은 후 두아디라가 버가모에 이어 내려왔다. 그는 사도 시대와 같은 직선이 되지않고 버가모와 일직선이 되었다. 사데는 두아디라로부터 나와 전환했다. 그러나 그의 전환은 회복의 전환이었다. 두아디라는 주님이 재림하실 때까지 계속되고 사데도 주님이 재림하실 때까지 계속된다. 이제 제기되는 것은 빌라델비아로서 빌라델비아는 사도 시대의 정통으로 전환한 교회이다. 빌라델비아의 전환은 성경에 나타난 처음의 위치로 전환한 것이다. 회복의 전환은 사데에서 시작하여 빌라델비아에서 완성되었다. 이제는 사도 시대와 같은 직선이 이루어진다. 빌라델비아는 사데로부터 나온 것이며 로마 천주교나 개신교에서 나온 것이 아니다. 빌라델비아는 사도 시대 교회의 계속이다. 이후의 라오디게아는 읽을 때 다시 보기로 한다.</p>
-    <p>이제 우리는 시간을 좀 들여서라도 무엇이 빌라델비아인지 보기로 하자. 빌라델비아가 무엇을 의미하는지 분명히 알기를 원한다. 일곱 교회 가운데 다섯은 책망이 있고 둘은 책망이 없다. 책망 받지 않은 두 교회 중 하나는 서머나요, 하나는 빌라델비아이다. 오직 이 두 교회만이 주님의 눈에 든 것이다. 주목할 만한 것은 주님이 빌라델비아에 하신 말씀이 서머나에 하신 말씀과 매우 흡사하다는 것이다. 서머나의 고난이 유대교였고 빌라델비아에도 유대교가 있다. 서머나 교회에서는 주님이 [시험을 받게 하리니]라 하셨고 빌라델비아에서는 [내가 또한 너를 지키어 시험의 때를 면하게 하리니 이는 장차 온 세상에 임하여 땅에 거하는 자들을 시험할 때]라고 말씀하셨다. 계 3:10 주님은 이 두 교회에게만 면류관을 말씀하셨으니 서머나에게는 [내가 생명의 면류관을 네게 주리라]고 하셨고 빌라델비아에게는 [네가 가진 것을 굳게 잡아 아무나 네 면류관을 빼앗지 못하게 하라]고 하신 것이다.</p>
-    <p>이 두 교회에는 몇 가지 공통되는 점이 있는데 그것은 곧 그들이 같은 직선-사도 시대 교회의 정통적 선상-에 있는 것이다. 사데 교회도 하나의 회복이었지만 불완전하고 미흡했다. 그러나 빌라델비아의 회복은 주님의 마음에 맞는 회복이다. 빌라델비아 교회가 우리에게 보여 주는 것은 그가 서머나 교회처럼 책망받지 않았을 뿐 아니라 칭찬도 받은 것이다. 여기에 그려진 곧은 직선은 하나의 선택받은 선이다. 우리가 분명히 알아야 할 것은 주님이 선택하신 것은 빌라델비아라는 것이다. 빌라델비아는 서머나의 회복에서 시작하여 사도 시대의 정통을 계속하는 것이다. 그러므로 주님이 그에게 하신 말씀은 바로 우리에게 지키고 순종하라는 것이다. 버가모와 두아디라의 전환은 매우 큰 것 것이었으므로 사데가 의기양양하게 왔지만 그의 회복은 완전치 못했다. 비록 회복의 길은 길었지만 미흡한 것이다. 빌라델비아는 완전한 회복이다. 이것을 우리는 분명히 알기 바란다.</p>
+          <path d="M440,265 L560,115" fill="none" stroke="#8a7442" stroke-width="1.5"/>
+          <line x1="860" y1="115" x2="1080" y2="115" stroke="#8a7442" stroke-width="1.5"/>
+          <text x="1090" y="120" font-family="Noto Serif KR" font-size="16" fill="#c6a15b">주님의 재림</text>
+
+          <path d="M900,115 L1000,190" fill="none" stroke="#8a7442" stroke-width="1.5"/>
+          <text x="950" y="212" font-family="Noto Serif KR" font-size="16" fill="#ece7d9" text-anchor="middle">사데</text>
+          <line x1="1000" y1="190" x2="1080" y2="190" stroke="#8a7442" stroke-width="1.5"/>
+          <text x="1090" y="195" font-family="Noto Serif KR" font-size="16" fill="#c6a15b">주님의 재림</text>
+
+          <line x1="440" y1="265" x2="800" y2="265" stroke="#ecc97a" stroke-width="1.7" stroke-dasharray="8 7"/>
+          <text x="850" y="260" font-family="Noto Serif KR" font-size="16" fill="#ecc97a" font-weight="700" text-anchor="middle">빌라델비아</text>
+          <line x1="900" y1="265" x2="1080" y2="265" stroke="#ecc97a" stroke-width="1.7"/>
+          <text x="1090" y="270" font-family="Noto Serif KR" font-size="16" fill="#c6a15b">주님의 재림</text>
+
+          <path d="M900,265 L1000,340" fill="none" stroke="#8a7442" stroke-width="1.5"/>
+          <text x="950" y="362" font-family="Noto Serif KR" font-size="16" fill="#ece7d9" text-anchor="middle">라오디게아</text>
+          <line x1="1000" y1="340" x2="1080" y2="340" stroke="#8a7442" stroke-width="1.5"/>
+          <text x="1090" y="345" font-family="Noto Serif KR" font-size="16" fill="#c6a15b">주님의 재림</text>
+        </svg>
+      </div>
+      <p class="chart-caption">일곱 교회의 계통표 — 사도시대·에베소·서머나에서 버가모·두아디라가 곁길로 갈라지고, 두아디라에서 사데가 갈라져 나온다. 빌라델비아는 서머나에서 곧장 이어지는 점선, 곧 사도 시대와 같은 직선의 계속이며, 그 아래에서 라오디게아가 갈라져 나온다.</p>
+    </div>
+
+    <div class="scripture-panel">
+      <p>빌라델비아 교회의 사자에게 편지하기를 거룩하고 진실하사 다윗의 열쇠를 가지신 이 곧 열면 닫을 사람이 없고 닫으면 열 사람이 없는 그이가 가라사대 볼지어다 내가 네 앞에 열린 문을 두었으되 능히 닫을 사람이 없으리라 내가 네 행위를 아노니 네가 적은 능력을 가지고도 내 말을 지키며 내 이름을 배반치 아니하였도다 보라 사단의 회 곧 자칭 유대인이라 하나 그렇지 않고 거짓말 하는 자들 중에서 몇을 네게 주어 저희로 와서 네 발 앞에 절하게 하고 내가 너를 사랑하는 줄을 알게 하리라 네가 나의 인내의 말씀을 지켰은즉 내가 또한 너를 지키어 시험의 때를 면하게 하리니 이는 장차 온 세상에 임하여 땅에 거하는 자들을 시험할 때라 내가 속히 임하리니 네가 가진 것을 굳게 잡아 아무나 네 면류관을 빼앗지 못하게 하라 이기는 자는 내 하나님 성전에 기둥이 되게 하리니 그가 결코 다시 나가지 아니하리라 내가 하나님의 이름과 하나님의 성 곧 하늘에서 내 하나님께로부터 내려오는 새 예루살렘의 이름과 나의 새 이름을 그이 위에 기록하리라 귀 있는 자는 성령이 교회들에게 하시는 말씀을 들을찌어다 <span class="verse-tag">계 3:7—13</span></p>
+    </div>
+
+    <div class="prose">
+      <p class="dropcap">여기에 우리의 이해를 돕기 위해 계통표를 그려 놓았다. 제일 첫 단계는 사도 시대의 교회를 대표한다. 에베소는 이미 느슨해진 교회이지만 에베소 교회가 사도 시대의 교회를 이어 온 것임을 주님께서 승인하시므로 여전히 같은 선 위에 있다. 그리고 서머나가 와서 다시 이어 갔다. 서머나는 참으로 고난을 받은 교회였다. 칭찬도 없고 책망도 없다. 서머나 이후 발생한 한 가지 사건은 버가모가 온 것이다. 버가모는 사도 시대의 정통을 계속하지 않고 세상과 연합하여 곁길로 갔다. 그는 서머나 교회에 이어 내려왔지만 사도 시대 교회의 정통을 계속한 것은 아니다.</p>
+
+      <p>버가모로부터 커다란 전환이 있은 후 두아디라가 버가모에 이어 내려왔다. 그는 사도 시대와 같은 직선이 되지않고 버가모와 일직선이 되었다. 사데는 두아디라로부터 나와 전환했다. 그러나 그의 전환은 회복의 전환이었다. 두아디라는 주님이 재림하실 때까지 계속되고 사데도 주님이 재림하실 때까지 계속된다. 이제 제기되는 것은 빌라델비아로서 빌라델비아는 사도 시대의 정통으로 전환한 교회이다. 빌라델비아의 전환은 성경에 나타난 처음의 위치로 전환한 것이다. 회복의 전환은 사데에서 시작하여 빌라델비아에서 완성되었다. 이제는 사도 시대와 같은 직선이 이루어진다. 빌라델비아는 사데로부터 나온 것이며 로마 천주교나 개신교에서 나온 것이 아니다. 빌라델비아는 사도 시대 교회의 계속이다. 이후의 라오디게아는 읽을 때 다시 보기로 한다.</p>
+
+      <p>이제 우리는 시간을 좀 들여서라도 무엇이 빌라델비아인지 보기로 하자. 빌라델비아가 무엇을 의미하는지 분명히 알기를 원한다. 일곱 교회 가운데 다섯은 책망이 있고 둘은 책망이 없다. 책망 받지 않은 두 교회 중 하나는 서머나요, 하나는 빌라델비아이다. 오직 이 두 교회만이 주님의 눈에 든 것이다. 주목할 만한 것은 주님이 빌라델비아에 하신 말씀이 서머나에 하신 말씀과 매우 흡사하다는 것이다. 서머나의 고난이 유대교였고 빌라델비아에도 유대교가 있다. 서머나 교회에서는 주님이 「시험을 받게 하리니」라 하셨고 빌라델비아에서는 「내가 또한 너를 지키어 시험의 때를 면하게 하리니 이는 장차 온 세상에 임하여 땅에 거하는 자들을 시험할 때」라고 말씀하셨다.<span class="inline-cite">계 3:10</span> 주님은 이 두 교회에게만 면류관을 말씀하셨으니 서머나에게는 「내가 생명의 면류관을 네게 주리라」고 하셨고 빌라델비아에게는 「네가 가진 것을 굳게 잡아 아무나 네 면류관을 빼앗지 못하게 하라」고 하신 것이다.</p>
+
+      <p>이 두 교회에는 몇 가지 공통되는 점이 있는데 그것은 곧 그들이 같은 직선-사도 시대 교회의 정통적 선상-에 있는 것이다. 사데 교회도 하나의 회복이었지만 불완전하고 미흡했다. 그러나 빌라델비아의 회복은 주님의 마음에 맞는 회복이다. 빌라델비아 교회가 우리에게 보여 주는 것은 그가 서머나 교회처럼 책망받지 않았을 뿐 아니라 칭찬도 받은 것이다. 여기에 그려진 곧은 직선은 하나의 선택받은 선이다. 우리가 분명히 알아야 할 것은 주님이 선택하신 것은 빌라델비아라는 것이다. 빌라델비아는 서머나의 회복에서 시작하여 사도 시대의 정통을 계속하는 것이다. 그러므로 주님이 그에게 하신 말씀은 바로 우리에게 지키고 순종하라는 것이다. 버가모와 두아디라의 전환은 매우 큰 것이었으므로 사데가 의기양양하게 왔지만 그의 회복은 완전치 못했다. 비록 회복의 길은 길었지만 미흡한 것이다. 빌라델비아는 완전한 회복이다. 이것을 우리는 분명히 알기 바란다.</p>
+
+      <p>「빌라델비아」는 헬라어로 두 글자를 합한 것으로 그 한 글자의 뜻은 「서로 사랑함」이고 또 한 글자의 뜻은 「형제」로서 곧 「형제를 서로 사랑함」의 뜻이다. 「형제를 서로 사랑함」은 곧 하나님의 예언이다. 제사는 두아디라의 특징이며 로마 천주교에서 이루어진 것이다. 회복은 사데의 특징이며 개신교에서 이루어진 것이다. 하나님께서 지금 우리에게 말씀하시는 것은 교회의 완전한 회복이 있을 때 비로소 주님께 찬미를 드릴 수 있다는 것이다.</p>
+
+      <p>성경을 읽은 사람은 물을 것이다. 「이것이 도대체 누구를 가리키는 것인가? 우리는 역사상 어디에서 이것을 찾을 수 있는가?」 이것은 가볍게 지나칠 문제가 아니다. 나는 이미 에베소 교회와 버가모 교회에서 니골라당의 행위와 니골라당의 교훈을 제기한 바 있고 또한 그들이 어떻게 제사장 계급을 대표했는가도 지적했다. 이스라엘 가운데서 레위 지파만이 제사장이 될 수 있었고 나머지는 제사장이 될 수 없었다. 그러나 교회 안에서는 하나님의 모든 자녀가 다 제사장이다. 베드로 전서 2장과 요한 계시록 5장에서 분명히 피로 사온 모든 사람이 다 제사장이라고 말한다. 그러나 니골라당은 특별히 제사장 직분을 만들어 냈다. 평신도는 세상에 가서 직업을 갖고 세상의 일을 하고 평신도 위의 사람은 와서 제사장 노릇을 하며 영적 일을 관리한 것이다. 여기에서 다시 또 말하거니와 이것은 중간 계급이다. 유대인에게는 유대교가 있었고 니골라당은 행위로부터 교훈에 이르렀다. 신부 계급을 볼 때 그것은 바로 영적 일은 그들이 하고 세상 일은 우리가 하도록 한 것이다. 안수는 그들의 일이요, 그들만이 축복을 할 수 있다. 나 스스로는 어떤 일을 묻지 못하고 그들에게 부탁하여 하나님께 물어야 한다.</p>
+
+      <p>사데에 와서 상태는 향상되었다. 신부 제도는 취소되었지만 성직 제도가 생겨 그것을 대신하게 되었다. 개신교에는 매우 엄격한 국립 교회와 산만한 사립 교회가 있다. 그러나 당신은 국립, 사립을 무론하고 다 중간 계급이 존재함을 볼 수 있다. 전자는 성직 제도요 후자는 목사 제도이다. 이러한 일종의 제사장 계급의 제도는 그를 신부라고 칭하든지, 성직자라고 칭하든지 혹은 목사라고 칭하든지 간에 다 주님께 거절 당하는 것이다. 개신교는 버가모의 니골라당의 교훈을 변용하여 계속한 것이다. 비록 개신교 내에 신부라 칭하는 사람은 없지만 성직자와 목사는 원칙적으로 동일한 것이다. 이것은 사역자라고 고쳐 불러도 여전히 그러한 위치에 선 것이고 동일한 냄새를 풍기는 것이다.</p>
+
+      <p>나는 이미 많은 성경의 근거를 들어 우리가 다 제사장임을 말했다. 그러나 지금 하나님과 사람 사이에는 다툼이 있다. 하나님께서는 교회 안에 있는 사람에게는 다 제사장 노릇을 할 자격이 있다고 말씀하셨는데 사람들은 왜 영적 권위가 신부와 같은 한 무리의 중간 계급의 수중에만 있다고 말하는가? 다시 또 말하거니와 피로 구속 받은 사람은 다 제사장이다. 피로 구속 받은 사람의 수가 곧 제사장의 수이다. 왜 주님은 빌라델비아를 책망하시지 않고 칭찬하시는가? 우리가 기억할 것은 계급의 시작이 버가모에 있었고 실행이 로마에 있었다는 것이다. 그들에게는 그들을 관리하는 교황이 있고 그들을 다스리는 대신과 바티칸의 고관 등등이 있다. 그러나 주님은 「너희들은 다 형제니라」<span class="inline-cite">마 23:87</span>고 말씀하신다. 우리가 마태복음 20장 25절과 23장 8절을 주의해야 한다.</p>
+
+      <div class="quote-block">
+        <p>예수께서 제자들을 불러다가 가라사대 이방인의 집권자들이 저희를 임의로 주관하고 그 대인들이 저희에게 권세를 부리는 줄을 너희가 알거니와</p>
+        <span class="cite">마 20:25</span>
+      </div>
+      <div class="quote-block">
+        <p>그러나 너희는 랍비라 칭함을 받지 말라 너희 선생은 하나요 너희는 다 형제니라</p>
+        <span class="cite">마 23:8</span>
+      </div>
+
+      <p>성경에 「목사」는 있으나 목사 제도는 없다. 또한 이 글자의 원문은 목자라는 뜻으로서 목동이라고 칭할 수 있는 것이다. 주 예수님께서는 너희들 가운데 선생이 있을 수 없고 아버지도 있을 수 없다고 말씀하신다.<span class="inline-cite">마 23:8—9</span> 그러나 우리는 로마 천주교에서 신부의 「아버지」와 개신교에서 목사의 「선생」을 볼 수 있다. 19세기의 하나의 대 부흥은 중간 계급을 없앤 것이다. 사데 후에 또 하나의 대 부흥이 있었는데 그것은 교회 가운데서 형제를 서로 사랑하고 중간 계급을 없앤 것이다. 이것이 곧 빌라델비아이다.</p>
+
+      <p>1825년 아이레의 수도 더불린의 몇 성도들은 그들의 마음이 하나님께 감동을 받아 어떤 교파를 막론하고 그 안에 있는 하나님의 자녀들을 사랑했다. 이 사랑은 교파의 담으로도 막을 수 없는 것이었다. 그들은 처음에 성경을 보고 사람이 분열시켜 여러 갈래로 나누었으나 그리스도의 몸은 하나라는 하나님의 말씀을 발견했다. 그러므로 그들은 처음에 주일마다 집회를 주관하는 제도나 한 사람이 설교를 하는 제도는 성경에 합당치 못한 것임을 발견했다. 그러므로 그들은 처음에 주일마다 집회하고 떡을 떼며 기도했다. 1825년 곧 천여 년의 로마 교회와 몇 백 년의 개신교 이후 제일 처음으로 회복된 것은 성경에 나타난 단순하고 자유롭고 영적인 예배였다.</p>
+
+      <p>처음에 시작할 때에는 사람이 불과 두 명에 지나지 않았고 후에도 사오 명에 불과했다. 이러한 성도들은 세상의 눈으로 볼 때에는 비천하고 이름 없는 사람들이었지만 그들 가운데 주님이 계셨고 성령의 안위가 있었다. 그들은 두 가지의 분명한 진리의 입장에 서 있었다. 첫째 교회는 그리스도의 몸이며 오직 하나라는 것이다. 둘째 신약 성경 안에는 성직 계급이 없으며 사람이 세워서 말씀을 전하는 것은 다 성경에 합당치 못하다는 것이다. 그들이 믿는 것은 참 그리스도인은 모두 이 한 몸의 지체들이라는 것이다. 그들은 그들 가운데 온 모든 사람을 그 사람이 어떤 교파에 속했든지 따뜻하게 환영했고 그들에게서는 나뉘었다는 느낌을 가질 수 없다. 그들이 믿는 것은 진실한 그리스도인은 다 제사장의 직분을 갖고 있으므로 누구든지 자유롭게 지성소에 들어갈 수 있다는 것이었다. 그들이 또 믿는 것은 승천하신 주님이 각종 은사를 교회에 주신 것은 성도를 온전케 하고 그리스도의 몸을 세우게 하려 함이라는 것이었다. 그러므로 그들은 성직 계급의 두 가지 죄-제사와 설교-에서 벗어날 수 있었다.</p>
+
+      <p>이 원칙은 그들로 그리스도 안에 있는 모든 사람을 환영하게 했고 그들로 다같이 형제가 되게 했고 동시에 성령으로 세운 말씀의 사역을 해방하게 했고, 봉사하게 했다. 이때 성공회의 성직자인 다비(John Nelson Darby)는 비록 그가 성직 제복을 입고 있었으나 자기 교회의 위치가 성경에 합당치 못함을 인정했으므로 항상 형제들과 함께 모이고 있었다. 다비는 하나님께 속한 사람이요 큰 능력을 가진 사람이었다. 또한 다비는 능력 있는 사람이었을 뿐 아니라 고난을 받고자 하는 사람이었다. 그는 고난을 달게 받고자 하는 사람이었을 뿐 아니라 하나님을 알고 성경을 알고 육체를 심판하는 영적인 사람이었다. 1837년에 그는 정식으로 성공회를 벗어나 성직자의 제복을 벗고 하나의 단순한 형제로서 다른 형제들과 모였다.</p>
+
+      <p>본래부터 있던 형제들이 보는 것에도 한도가 있었으나 다비가 정식으로 들어온 후부터는 하늘의 빛이 홍수같이 쏟아져 내려왔다. 여러 면에서 다비의 역사는 웨슬레와 매우 흡사했다. 그러나 그들의 성공회에 대한 태도는 완전히 달랐다. 일세기 앞의 웨슬레에게는 이 국립 교회를 담대히 벗어나려는 느낌이 없었고 일세기 후의 다비에게는 계속 성공회에 있을 수 없다는 느낌이 있었던 것이다. 그러나 열심과 전심을 다함과 충성심은 둘에게 많이 상통되는 점이었다.</p>
+
+      <p>그 해에 벨렛(J. G. Bellet)도 와서 집회에 참석했는데 그도 깊고 신령한 사람이었다. 그는 이 단순하고 성경적인 집회에서 크게 감동을 받고 아래와 같이 그 당시의 상황을 말했다.</p>
+
+      <div class="quote-block">
+        <p>한 형제가 내게 말하기를 「성경에서 그리스도의 제자로서 함께 모인 성도들은 주님의 명령을 좇아 자유롭게 떡을 뗐다. 또 사도의 본을 따른다면 우리는 주님의 죽으심을 기념하며 주님이 떠나실 때 주신 명령을 순종하기 위해 마땅히 매 주일을 분별해야 한다」고 했다.</p>
+        <span class="cite">벨렛의 회고</span>
+      </div>
+      <div class="quote-block">
+        <p>언젠가 내가 한 형제와 같이 길을 갈 때 그 형제가 내게 말하기를 「내가 믿는 바로는 주님의 우리에 대한 뜻은 바로 이것입니다. 우리는 단순히 제자의 자격으로 모이며 어떤 설교를 기다리지 말아야 합니다. 다만 주님께서 우리 전부를 온전케 하시기를 의지하고 성령이 임의로 우리 중의 누구든 선택하여 말씀을 전하게 하는 것입니다.」라고 했다. 그가 이 몇 마디 말을 할 때 내 마음은 빛을 보았다. 그 날은 내 생일과 같은 날이었고 형제가 된 첫날이었다.</p>
+        <span class="cite">벨렛의 회고</span>
+      </div>
+
+      <p>형제들은 이렇게 점차 찾아가며 점차 계시를 얻고 점차 빛을 보게 된 것이다.</p>
+
+      <p>일 년이 지나 1828년에 다비는 「교회의 성격과 합일」이라는 한 권의 소책자를 출간했다. 이 한 권의 책은 형제들이 출간한 천만 권의 책 중에서 첫 번째 책이었다. 다비는 이 책에서 형제들에게는 어떤 새로운 교파나 교회 연합회를 설립하려는 의사가 없음을 표명했다.</p>
+
+      <div class="quote-block">
+        <p>첫째로 분열된 단체들의 형식적인 연합은 바람직한 일이 아니다. 놀라운 것은 연합을 모색하는 개신교인들이 많다는 것이다. 내가 믿는 바로는 이러한 연합은 바람직하지 못하다. 그렇게 연합한 단체는 결코 하나님의 교회로 인정될 수 없으며 그것은 다만 로마의 연합에 불과할 뿐이다. 이러한 단체 안에서는 교회 생활과 말씀의 능력이 완전히 상실된다. 더욱이 영적 생명의 합일은 절대로 불가능한 것이다. 진실한 합일은 오직 성령의 역사의 결과라야 가능한 것이다. 하나님의 아들의 나라의 완전한 근거에서 하나님의 모든 자녀를 포함하지 않고서 완전한 축복을 받을 수 있는 집회는 없다. 왜냐하면 이 집회는 이 축복을 받을 생각을 하지 않았기 때문이고 이 집회의 성질은 이 축복을 포함하지 않았기 때문이다. 성경에서 말하기를 집회는 그의 이름을 의지하고 그의 이름은 곧 축복을 위한 것이라고 했다. 나아가서 합일은 교회의 영광이다. 그러나 우리들의 이익을 취하고 증진시키는 합일이 아니며 교회의 합일은 곧 성령의 합일이다. 이 합일은 성령 안에서만 되는 것이므로 오직 영에 속한 사람들 사이에서만이 완전케 된다. 그렇다면 하나님의 백성은 어떻게 해야 하는가? 주님을 기다리고 성령의 교훈을 따라 기다리며 성령의 생명을 따라 그의 아들의 형상을 닮아가야 한다. 「만일 그들이 선한 목자가 어디에서 양떼를 치는지 안다면 그들로 양떼의 발자취를 따라가게 하라」</p>
+        <span class="cite">다비, 「교회의 성격과 합일」(1828)</span>
+      </div>
+
+      <p>또 다른 곳에서 다비는 말했다. 「우리의 상은 주님이 상이요 우리의 상이 아니므로 우리는 하나님이 받으시는 모든 자 곧 곤고한 죄인, 도피하여 주님을 찾아와 피난처로 사는 자, 자기 속에 안식을 갖지 못하는 자, 오직 그리스도 안에서만 안식을 얻는 자를 받아야 한다」 한 번은 하나님께서 영국의 가이아나(Guiana)와 이탈리아에서 동시에 역사하시어 동시에 똑같은 모임이 일어났다. 1929년에 아라비아에서 또 모임이 있었다. 1830년에는 영국의 런던, 플리머스(Plymouth), 브리스톨(Bristol)에서 다 모임이 있었다. 곧 미국의 많은 곳에서도 모임이 있었다. 유럽 대륙에서도 많은 모임이 있었다. 곧 전세계 각지에서 주님을 사랑하는 사람들이 대부분 이러한 모임을 시작했다. 비록 표면적인 연합은 없었으나 그것은 다 하나님께서 일으키신 것이다.</p>
+
+      <p>이러한 형제들이 일어난 데에는 하나의 특징이 있었는데, 그것은 곧 높은 지위에 있는 사람이 높은 지위를 버리고, 지위가 있는 사람은 지위를 버리고, 학위가 있는 사람은 학위를 버리고, 다 같이 세상과 교회에서의 계급을 버리고 단순히 와서 그리스도의 제자가 되어 피차 형제가 된 것이다. 「아버지」라는 말이 로마 천주교에서 상용되고 「선생」이라는 말이 개신교에서 상용되어 온 것처럼 이제는 「형제」라는 말이 그들 가운데서 상용되었다. 그들은 주님의 이끌림을 받고 주님을 사랑하므로 자연히 서로 사랑하게 되었고 한 곳에 모였다.</p>
+
+      <p>몇 십 년 동안에 하나님은 많은 은사를 그의 교회에 주셨다. 하나님은 다비(J. N. Darby) 벨렛(J. G. Bellet) 외에도 많은 형제들에게 특별한 직분을 주시어 그분의 교회가 공급을 받게 하셨다. 고아원을 설립한 뮬러(George Muller)는 믿음의 기도를 회복했다. 그의 일생 동안에 믿음의 기도가 응답된 것은 백오십 만 번이었다. 모세 오경을 주해한 매킨토시(C. H. Mackintosh)는 예표의 인식에 대해 회복했다. 무디(Moody)는 전세계의 책이 다 탄다 해도 그에게 한 권의 성경과 매킨토시의 모세 오경 주해만 있으면 만족한다고 했다. 덱(James G. Deck)은 우리에게 좋은 찬송가를 많이 주었다. 커팅(George Cutting)은 구원의 확신을 회복했다. 그의 저서 중의 하나인 「구원, 확신, 기쁨」은 1930년에 이미 삼천 만 권이 팔렸으며 성경 외에 가장 판로가 큰 책이었다. 켈리(William Kelly)는 많은 주해를 쓴 사람이었는데 스펄전(C. H. Spurgeon)은 켈리에 대해 「그의 생각은 우주처럼 크다」고 말했다. 그랜트(F. Grant)는 십구, 이십 세기에 있어서 성경을 가장 잘 아는 사람 중의 하나였다. 앤더슨(Robert Anderson)은 근대에서 다니엘서를 가장 잘 아는 사람이었다. 스탠리(Charles Stanley)는 하나님의 은혜를 전파함으로 사람들에게 구원을 가장 잘 전한 사람이었다. 트레젤스(S. P. Tregelles)는 유명한 신약 문헌학자였다. 밀러(Andrew Miller)의 교회사는 모든 교회사 중에서 가장 성경과 일치하는 책이다. 체프만(R. C. Chapman)도 주님이 크게 쓴 사람 중의 하나였다. 이들이 다 당시의 형제들이었다. 이 외에도 더 자세히 적는다면 형제들 가운데 천 명 이상이 다 주님께서 소중하게 쓰신 분들이다.</p>
+
+      <p>우리는 이제 그 형제들이 우리에게 준 것이 무엇인가를 보아야 한다. 그것은 주님의 피가 어떻게 하나님의 의를 만족케 하는가, 구원의 확신이 약한 성도가 어떻게 그리스도가 열납됨과 같이 그리스도 안에 열납될 수 있는가, 구원의 근거가 되는 하나님의 말씀을 어떻게 믿는가 등이었다. 교회의 역사가 시작된 이래 그 어떤 시대에도 복음이 그들보다 더 분명한 적은 없었다. 뿐만 아니라 그들이 우리에게 보여 준 것은 교회가 온 세상을 얻을 수 없으며, 교회는 하늘의 부르심을 받았으며, 교회의 소망은 세상적인 데 있지 않다는 것이다. 또 그들은 처음에 여인을 해석하여 나라와 환난과 들림 받음과 신부(新婦)를 우리에게 보여 주었다. 우리가 지금 알고 있는 장래 일은 그들이 아는 것의 몇 퍼센트밖에 안 되는 것이다. 또 그들은 우리에게 죄의 율이 무엇인가, 해방이 무엇인가, 주님과 함께 십자가에 못 박힘이 무엇인가를 보여 주었다. 또 그들이 우리에게 보여 준 것은 교파의 죄악과 그리스도의 몸의 합일, 성령의 합일이었다. 또 그들이 보여 준 것은 유대교와 교회의 분별이었다. 로마 천주교와 개신교 사이에서는 이 차이가 보이지 않았으나 그들은 우리에게 다시 이 분별을 보여 주었다. 그들은 또 우리에게 중간 계급의 죄악을 알려주었고 하나님의 자녀는 다 제사장이요 다 하나님께 봉사할 수 있다는 것을 알려 주었다. 그들은 고린도 전서 14장의 집회 원칙의 회복을 우리에게 알려 주고 말씀 전하는 것은 한 사람의 일이 아닌 두 세 사람의 일이요, 말씀을 전하는 근거는 세우는 데 있지 않고 성령의 은사에 있음을 우리에게 보여 주었다.</p>
+
+      <p>오늘날 그 어느 곳도 그들보다 많은 진리를 회복한 곳은 없다. 그러므로 팬톤(Panton)은 서슴없이 말하기를 「형제들의 운동과 그 중요성은 종교 개혁보다 훨씬 위대한 것이다」라고 했다. 토마스 그리피스(Thomas Griffith)도 말하기를 「하나님의 자녀 중에서 진리를 가장 바르게 잘 해석한 사람들이 바로 이들이다」라고 했다. 헨리 아이온사이드(Henry Ironside)는 「하나님을 아는 모든 사람은 형제들을 알든 모르든 직접적으로나 간접적으로 다 형제들의 도움을 받았다」고 말했다.</p>
+
+      <p>이 운동은 종교 개혁보다도 더 위대한 것이었다. 여기에서 나는 빌라델비아의 역사가 종교 개혁의 역사보다 더 크다고 말하고 있다. 종교 개혁이 우리에게 주지 못한 것을 빌라델비아는 우리에게 주었다. 우리가 하나님께 감사 드리는 것은 교회의 문제를 형제들의 운동이 해결했다는 점이다. 하나님의 자녀의 위치도 거의 다 회복시켰다. 그러므로 이들이 양적으로나 질적으로 개신교보다 더 큰 것을 볼 수 있다. 다른 면으로 우리가 한 가지 주의해야 할 것은 형제들의 운동이 종교 개혁보다 더 이름을 날린 것은 아니었다는 점이다. 종교 개혁은 칼과 창으로 이루어졌고 형제들의 운동은 전도로 이루어졌다. 종교 개혁을 위해 많은 사람이 유럽 전쟁에서 죽었다. 종교 개혁의 한 가지 원인은 그들의 이름을 날리기 위해서 정치와 관계를 맺은 것이다. 많은 국가가 종교 개혁을 하여 정치적으로 로마의 세력에서 벗어났다. 정치와 관계없는 자는 사람들에게 알려지기 어려웠다.</p>
+
+      <p>또 형제들은 두 가지를 보여 주었는데 그 하나는 우리가 말하는 조직적인 세계 즉 정신 세계요, 또 다른 하나는 형제들이 말하는 이름, 곧 기독교의 세계이다. 그들은 정신 세계를 벗어났을 뿐 아니라 개신교가 대표하는 기독교의 세계도 벗어났다. 그러므로 그들은 개신교를 광고하지 않은 것이다. 그들은 죄악의 세계에서 나왔을 뿐 아니라 기독교의 세계에서도 나온 것이다. 그 때부터 사람들은 교회가 무엇인지 알게 되어 교회는 그리스도의 몸이요 하나님의 자녀들은 한 교회이기 때문에 나뉠 수 없다는 것을 알게 되었다. 그들이 중시한 것은 곧 형제요, 서로 진실히 사랑하는 것이었다. 주 예수님은 하나의 교회가 나오리니 그 이름은 바로 「빌라델비아」라고 말씀하셨다. 우리는 이제 계시록을 보자.</p>
+
+      <p>「빌라델비아 교회의 사자에게 편지하기를」 빌라델비아는 형제가 서로 사랑함이다. 하나님은 빌라델비아 교회의 무엇을 칭찬하셨는가? 그분이 말씀하신 것은 형제가 서로 사랑하고 중간 계급을 완전히 제거해 버린 것이다. 나는 이 기회에 몇 마디 더 말하고 싶다. 교회 안에는 남자도 없고 여자도 없다. 교회 안에는 자매가 하나도 없다. 여기 우리가 앉아 있을 때 다 형제요 자매는 없는 것이다. 그러면 우리 자매는 물을 것이다. 「나는 누구입니까?」 다 형제다. 왜 우리가 형제인가? 우리는 그리스도의 생명을 가졌기 때문이다. 오늘날 이 세계에 많은 남자가 있으나 그들은 우리 형제가 아니다. 사람으로서 형제가 되는 것이지 남자로서 형제가 되는 것이 아니다. 당신 안에 그리스도의 생명이 있고 내 안에 그리스도의 생명이 있기 때문에 우리는 형제인 것이다.</p>
+
+      <p>주 예수께서 승천하실 때 「내가 내 아버지 곧 너희 아버지, 내 하나님 곧 너희 하나님께로 올라간다」<span class="inline-cite">요 20:17</span>라고 하셨다. 그는 아버지의 장자이다. 제1장에서 하나님에게는 오직 그 아들만이 있었지만 20장에 와서는 그의 생명을 사람들에게 나누어주어 그는 자연히 장자가 되었고 우리는 다 형제들인 것이다. 죽었다가 사심으로 하나님의 독생자는 장자가 되었다. 그러므로 우리는 그의 생명을 받았기 때문에 능히 형제가 될 수 있다. 그리스도의 생명을 받았기 때문에 모두 다 형제다. 남자가 그리스도의 생명을 받아 형제가 되는 것같이 여자도 그리스도의 생명을 받아 형제가 된다. 여자가 여성인 것은 그리스도 안에서는 아무 관계가 없다. 남자든지 여자든지 한 생명을 받음으로써 형제가 되는 것이다. 모든 서신은 다 형제에게 쓴 것이요 자매에게 쓴 것이 아니다. 개인적으로 볼 때 어떤 사람은 자매이지만 교회 안에서는 오직 형제만이 있을 뿐이다. 그 생명으로 인해서 우리는 다 하나님의 아이들이 되었다. 신약 안에 있는 「자녀(Sons and daughters)」는 다 「아이들(Children)」로 번역되어야 한다. 원문을 보면 고린도 후서 6장을 제외하고는 하나님께 여아는 없다.</p>
+
+      <p>당신은 보았는가? 교회에서는 모두가 형제의 위치에 서는 것이다. 언젠가 상해에 있을 때 나는 미장공인 어떤 형제에게 말했다. 「가서 몇 형제들을 불러 오시오」 그가 물었다. 「남자 형제를 데려 올까요? 여자 형제를 데려 올까요?」 이 사람은 하나님의 교훈을 받은 사람이다. 그러므로 우리가 자매라 부르는 것은 개인에 대한 호칭일 뿐이요, 교회 안에 남녀의 구별은 없는 것이다. 교회 안에는 자유자도 없고 종도 없다. 그가 주인이라 하여 그가 얻은 생명이 큰 것일 수 없고 그가 종이라 하여 그가 얻은 생명이 작은 것일 수 없다. 나는 전에 어떤 형제가 내게 한 말을 기억한다. 「정부 관리들에게 말씀을 들려주기 위해서는 보통 집회하는 곳은 별로 좋지 않으니 특별한 곳을 준비하는 것이 좋겠습니다.」 나는 말했다. 「당신은 장차 어떤 간판을 달 생각입니까?」 그것은 주님의 교회가 아닌 관청 교회이다. 교회 안에는 관리가 없다. 교회 안에서는 모든 사람이 다 형제다. 하나님이 당신의 눈을 뜨게 하실 때 세상에서는 다른 사람보다 높은 것이 영광이지만 교회 안에서는 이런 구별이 없음을 보게 될 것이다. 바울이 말하기를 그리스도 안에는 유대인도 헬라인도 없고 종도 자유자도 없고, 남자도 여자도 없다고 했다.<span class="inline-cite">고전 12:13, 갈 3:28</span> 교회는 그러한 구별 위에 선 것이 아니고 형제의 사랑 위에 선 것이다.</p>
+
+      <p>다른 곳과 같이 여기에서도 주님은 자기 이름을 제기하셨다. 여기에서 말씀하시기를 「거룩하고 진실하사 다윗의 열쇠를 가지신 이 곧 열면 닫을 사람이 없고 닫으면 열 사람이 없는 그이」<span class="inline-cite">계 3:7</span>라고 하셨다. 거룩함은 그의 생명이요, 그분 자신이 곧 거룩함이다. 그는 하나님 앞에 참이요 그는 곧 하나님의 실제요 하나님의 실제는 곧 그리스도이다. 그의 손 안에는 열쇠가 있다. 여기에서 내가 부탁하는 것은 이 한 가지를 주의하라는 것이다. 사데가 일어나 주님을 위해 간증할 때 땅에 있는 군왕들은 그를 도와 전쟁을 했다. 유럽 대륙에서 수십 년, 영국에서 수십 년이었다. 그러나 형제들의 운동은 어떠했는가? 세력도 없었고 배후에서 돕는 자도 없었다. 그러면 어떻게 했는가? 주님께서 말씀하시기를 그는 다윗의 열쇠를 가지셨다고 했다. 이것은 곧 권위를 의미한다. (성경은 다윗을 왕이라 칭했다) 이것은 무력의 문제가 아니요, 광고의 문제도 아니요, 문을 여는 문제인 것이다. 영국의 한 신문의 편집자는 말하기를 「나는 이렇게 많은 형제들이 있으리라고는 생각지 못했고 그들이 그렇게 빨리 성장할 줄은 몰랐다」고 했다. 당신이 만일 전세계를 여행해 본다면 각처에 많은 형제들이 있음을 알 수 있을 것이다. 그들이 비록 진리를 아는 데 있어서 깊은 점도 있고 얕은 점도 있지만 형제의 지위로서는 같은 것이다. 이런 상태를 볼 때 우리는 하나님께 감사해야 할 것이다. 하나님은 열면 닫을 사람이 없고 닫으면 열 사람이 없다고 말씀하셨다.</p>
+
+      <p>「내가 네 행위를 아노니 네가 적은 능력을 가지고도」 이것을 읽을 때 우리는 자연히 스룹바벨이 돌아온 이후 어느 선지자가 한 말을 생각하게 된다. 「작은 일의 날이라고 멸시하는 자가 누구냐」<span class="inline-cite">슥 4:10</span> 여러분은 작은 일의 날을 멸시하지 말라. 이것은 곧 성전을 건축하는 날이다. 성경 안의 교회의 큰 예표는 바로 성전이다. 다윗이 왕 노릇할 때는 하나님의 백성들이 하나가 되었다. 그 후에는 나뉘어져서 하나는 유대, 하나는 이스라엘이 되었다. 하나님의 백성이 나뉘어질 때 동시에 우상이 일어났고 간음을 했고 결국에는 바벨론으로 포로로 사로잡혀 가게 되었다. 누구나 바벨론으로 포로 되어 간 것이 곧 두아디라 곧 로마 천주교의 예표임을 인정하고 있다. 성경에서 바벨론은 로마를 예표하기 때문에 교회도 바벨론의 포로가 되었던 것이다.</p>
+
+      <p>하나님의 백성이 포로 되었던 곳에서 돌아온 후 그들은 무엇을 했는가? 그들은 몹시 미약하게, 한 무리씩 한 무리씩 돌아온 것이다. 그들은 성전을 건축했다. 그것은 형제들의 운동의 예표와 매우 흡사했다. 거기에는 많은 유대인 곧 옛 성전을 본 노인들이 있었다. 그들은 이제 이 성전의 영광이 솔로몬 때의 영광에 비해 너무도 보잘것없기 때문이었다. 그러나 하나님은 작은 선지자를 통해 말씀하셨다. 「너희는 작은 일의 날이라고 멸시하지 말라, 이것은 회복의 날이다.」 주님은 여기에서도 같은 말씀을 하셨다. 「네가 적은 능력을 가지고」 오늘 세상에서의 교회의 간증은 처음의 오순절과 비교할 때 정말 작은 일의 날에 불과한 것이다.</p>
+
+      <p>「내 말을 지키며 내 이름을 배반치 아니하였도다」 주님은 그들의 두 가지를 인정하셨는데, 그것은 주님의 이름을 버리지 않은 것과 주님의 말씀을 버리지 않은 것이다. 교회 역사 가운데 그 어떤 시대에서도 하나님의 말씀을 형제들같이 안 때는 없었다. 마치 홍수가 쏟아져 내려오는 것처럼 빛이 많았다. 내가 상해에 있을 때 어느 날 저녁 한 형제를 만났는데 그는 자기가 배 안의 요리사라고 했다. 나는 그와 오래 얘기를 나눴는데 보통 전도사 중에서도 그 사람처럼 하나님의 말씀을 아는 사람은 드물 것 같았다. 또 한 형제가 있었는데 어떤 사람이 그에게 「왜 성경 안에 수금은 있는데 피리는 없느냐?」고 물었다. 그 형제가 대답하기를 「하나님이 음악을 좋아하시는 것도 사실이지만 찬송을 더 좋아하십니다.」라고 했다. 그렇다, 만일 입으로 피리를 불면 찬송은 어떻게 하겠는가? 그는 부지중에 이런 말을 했다. 우리는 이 작은 데에서도 그가 하나님의 말씀을 잘 알고 있음을 느낄 수 있다. 또 어떤 자매가 곤란한 형편에 빠져 있을 때 한 형제가 그 자매를 찾아가 원인이 무엇이냐고 물었다. 그 자매는 「분명치 못한 입장에서 전쟁을 했으니 결국은 머리털이 나무에 걸리게 된 것입니다」라고 대답하는 것이었다. 또 배 안에서 어느 선교사가 한 형제에게 말했다. 「나는 신약의 여러 곳에서 떡과 생선을 말한 것이 참 신기합니다.」 그 형제가 대답하기를 「그것은 땅의 풍성과 바다의 풍성을 더한 것입니다」라고 했다. 그렇다! 그들의 한 가지 특징은 곧 그들이 하나님의 말씀을 잘 아는 것이었다. 당신이 만일 그들 중의 한 작은 형제를 만나 본다면 그가 많은 선교사들보다 더 명확한 것을 알고 있음을 알 수 있을 것이다.</p>
+
+      <p>주님께서는 「네가 내 이름을 배반치 아니하였도다」라고 말씀하셨다. 1825년 이후 형제들이 말하기를 우리는 다만 「그리스도인(Christian)」이라고 불릴 수 있다고 했다. 그들에게 당신이 누구냐고 묻는다면 그들은 「나는 그리스도인입니다.」라고 대답할 것이다. 그러나 당신이 감리교에 다니는 사람에게 물어 보면 그는 「나는 감리교인입니다」라고 대답할 것이다. 장로교에 다니는 사람에게 물어 보면 「나는 장로교인입니다.」라고 대답하고, 침례교에 다니는 사람은 「나는 침례교인입니다」라고 대답할 것이다. 또 성결교에 다니는 사람에게 물어 보면 「나는 성결교인입니다」라고 대답할 것이다. 사람들은 그리스도 외의 많은 이름을 붙여 자기 자신을 부르고 있다. 그러나 하나님의 자녀들은 오직 하나의 이름만으로 자기를 부른다. 주 예수께서 말씀하시기를 「내 이름으로 기도하고」 「내 이름으로 모이라」고 하셨다. 우리는 다만 주님의 이름만을 가질 수 있다. 화이트 필드(White Field)는 말했다. 「모든 이름은 다 버려지고 오직 그리스도의 이름만이 높여지기를 원합니다.」 형제들은 일어나서 바로 이와 같이 했다. 주님의 예언과 같이 그들은 주의 이름을 가장 존중했다. 그리스도의 이름은 그들의 중심이었다. 그들 가운데에는 항상 이런 구절이 있었다. 「그리스도의 이름이 우리를 세상으로부터 충분히 분별해 낼 수 있지 않은가? 우리가 주님의 이름을 메고 다니는 것이 좋지 않은가?」</p>
+
+      <p>나는 언젠가 기차 안에서 만난 한 성도를 기억한다. 그는 나에게 어느 파의 그리스도인이냐고 물었다. 나는 그에게 「나는 단지 그리스도인입니다.」라고 대답했다. 그는 「세상에 그런 그리스도인이 어디 있습니까? 나는 단지 그리스도인입니다. 사람이 그리스도인이 되었다는 것이 아무 의의가 없습니까? 당신은 어느 종파의 그리스도인이라고 말해야 의의가 있단 말입니까? 나는 다만 그리스도인인 것에 만족할 뿐입니다.」 그 날 우리는 좋은 교제를 가졌다. 당신이 보아야 할 한 가지 일은 많은 사람들의 근본적인 생각, 즉 주님의 이름만으로는 부족하다고 여기는 것이다. 많은 사람들이 교파의 이름을 넣어야 하고 기어코 주님의 이름 외에 또 한 이름을 넣어야 한다고 생각하는 것이다. 형제들이여 여러분은 우리의 태도가 완고하다고 생각지 말라. 주님은 여기에서 「너희가 내 이름을 배반치 아니하였도다」라고 말씀하셨다. 만일 내 느낌이 옳다면 모든 이름은 다 그를 욕되게 하는 것이다. 이 「배반」은 베드로가 주님을 부인한 것과 똑같은 글자다. 나는 어떠한 그리스도인인가? 나는 그리스도인이다. 나는 다른 이름을 더 원치 않는다. 많은 사람들이 그리스도의 이름을 존중하려 하지 않고 단순히 그리스도인이라 칭함 받기를 원치 않는다. 그러나 하나님께 감사 드리는 것은 빌라델비아의 예언이 형제들 안에서 이루어진 것이다. 그들에게는 달리 구별 짓는 이름이 없었다. 그들은 형제들이요 「형제 교회」가 아니다.</p>
+
+      <p>「볼지어다 내가 네 앞에 열린 문을 두었으되 능히 닫을 사람이 없으리라」 주님은 빌라델비아 교회에게 「열린 문」을 말씀하신다. 사람들은 보통, 「네가 만일 성경대로 행하면 문이 곧 닫힐 것이다. 주님에게 순종하는 것은 가장 어려운 것이요 문이 닫히는 것이다」라고 말한다. 그러나 여기에 하나의 특별한 약속이 있는데 그것은 「볼지어다 내가 네 앞에 열린 문을 두었으되 능히 닫을 사람이 없으리라」고 하신 것이다. 그들에게 있어서 이것은 사실이었다. 전세계의 그 어떤 사람들도 성경 강연으로나 전도로나 그들처럼 기회를 많이 가진 적은 없었다. 유럽, 미국, 아프리카에서 다 그러했다. 인간의 지지와 구호와 광고와 보조가 없어도 그들은 항상 많은 기회가 있어 일을 할 수 있었고 일하는 문은 항상 열려 있었다.</p>
+
+      <p>「보라 사단의 회 곧 자칭 유대인이라 하나 그렇지 않고 거짓말하는 자들 중에서 몇을 네게 주어 저희로 와서 네 발 앞에 절하게 하고 내가 너를 사랑하는 줄을 알게 하리라」 전에 우리는 기독교가 유대교로 변한 네 가지 면 곧 중간 계급, 의문과 교리, 물질적인 성전, 세상에 속한 약속을 말했다. 주님은 어떻게 말씀하시는가? 「내가 저희로 와서 네 발 앞에 절하게 하고」 유대교는 형제들의 손 안에서 파괴된다. 전세계 각지에서 이러한 운동이 일어나고 그들이 있는 곳에서 유대교는 실패한다. 참으로 하나님을 아는 사람에게 있어서는 유대교의 중요한 힘은 이미 지나간 것이다.</p>
+
+      <p>「네가 나의 인내의 말씀을 지켰은즉」 이것은 1장의 「예수의 환난과 나라와 참음에 동참함」과 연결된다. 여기에서 「인내(참음)」라는 두 글자는 명사도 형용사도 아니다. 오늘은 그리스도의 인내의 시대이다. 오늘 주님은 주님을 조롱하는 많은 사람을 만나시지만 그분은 인내할 뿐이다. 어느 날 심판이 올 것이다. 그러나 오늘은 그분이 참으신다. 오늘 그분의 말씀은 인내의 말씀이다. 그분은 여기에서 명예 없는 비천한 사람이요 나사렛 사람이요 목수의 아들이다. 우리가 주님을 따를 때 그분은 「나의 인내의 말씀을 지키라」고 하신다.</p>
+
+      <p>「내가 또한 너를 지키어 시험의 때를 면하게 하리니 이는 장차 온 세상에 임하여 땅에 거하는 자들을 시험할 때라」 「시험할 때」는 원문으로는 「시험할 시각」이므로 이 구절의 원 뜻은 「내가 너를 지켜 시험의 때를 면하게 하리니 이는 장차 온 세상에 임하여 땅에 거하는 자들을 시험할 시각이라」인 것이다. 예를 들어 내가 중경(重慶)에서 「내가 너로 폭탄을 맞지 않게 해주마」라고 말한다면 그 뜻은 바로 네가 중경에 계속 있어도 폭탄을 맞지 않게 해 준다는 뜻이다. 그러나 만일 내가 「내가 그 시각에 너를 지켜 주겠다」라고 한다면 그것은 그 시각 전에 너를 성도(成都)로 떠나게 하리라는 것이다. 온 세상이 시험을 당할 때 (이것은 우리가 다 아는 바와 같이 대환난을 가리킨다) 우리는 그 환난을 당하지 않는다. 그 시각이 오기 전에 우리는 이미 들림 받게 되는 것이다. 전체 성경 가운데 단 두 군데에서 들림 받는 것에 대한 약속을 말했다. 하나는 누가복음 21장 36절이고 하나는 계시록 3장 10절이다. 오늘 우리는 주님을 따르는 이 날을 허송 세월 하지 말고 빌라델비아의 가는 길을 배우고 주님께서 우리를 모든 시험에서 건져내시기를 구해야 한다.</p>
+
+      <p>「내가 속히 임하리니 네가 가진 것을 굳게 잡아 아무나 네 면류관을 빼앗지 못하게 하라」 주님은 「내가 속히 임하리라」고 말씀하셨다. 그러므로 이 교회는 주님이 오실 때까지 계속된다. 두아디라는 지나가지 않고 사데도 지나가지 않고 빌라델비아도 지나가 버리는 것이 아니다. 「네가 가진 것을 굳게 잡아」는 곧 「나의 말씀」과 「나의 이름」을 굳게 잡으라는 것이다. 우리는 주의 말씀을 잊지 말고 주님의 이름을 부끄럽게 하지 말아야 한다. 「아무나 네 면류관을 빼앗지 못하게 하라」 빌라델비아의 모두가 다 면류관을 갖고 있다. 다른 교회에서는 얻는 것이 문제이나 여기에서는 잃는 것이 문제이다. 주님은 너희들이 다 면류관을 갖고 있다고 하신다.</p>
+
+      <div class="quote-block">
+        <p>이제 후로는 나를 위하여 의의 면류관이 예비 되었으므로 주 곧 의로우신 재판장이 그 날에 내게 주실 것이니 내게만 아니라 주의 나타나심을 사모하는 모든 자에게니라</p>
+        <span class="cite">딤후 4:8</span>
+      </div>
+
+      <p>또 교회 가운데에서는 빌라델비아가 자기의 면류관이 있음을 안다. 이제 아무도 네 면류관을 빼앗지 못하게 하라는 것은 빌라델비아로부터 나오지 말며 네 위치를 떠나지 말라는 것이다. 그러므로 여기에서 말한 것은 아무나 네 면류관을 빼앗지 못하게 지키라고 한 것이다. 이것은 분명히 빌라델비아의 위험성을 말하는 것이다. 그렇지 않으면 주님이 이러한 경고를 하실 리가 없다. 또한 이런 위험성은 상당히 실제적인 것이므로 주님은 이런 엄중한 지시를 하신 것이다. 그들의 위험성은 어디에 있는가? 그들의 위험성은 곧 그들에게 있는 것을 잃는 것이다. 그러므로 주님은 그들에게 있는 것을 지키라고 하신다. 그들의 위험성은 진보하지 않는 데 있는 것이 아니라 퇴보하는 데 있다. 그들이 주님의 기뻐하심을 받는 까닭은 그들이 서로 사랑하고 주님의 말씀과 주님의 이름에 충성했기 때문이다. 그들의 위험성은 그들이 사랑과 충성심을 잃는 것이다. 아 얼마나 두려운가! 실제로 이런 상황이 발생했다. 이십 년 후 형제들은 분열되었다. 그들의 분열은 「보수파(Exclusive)」와 「공개파(Open)」의 두 파로 나뉘어진 것이었고 그 두 파도 또 많은 파로 갈라졌다. 그러므로 빌라델비아에서도 이기는 자를 부르신 것이다.</p>
+
+      <p>이 문제의 원인은 어디에 있는가? 우리는 매우 조심하고 매우 겸손해야 한다. 그렇지 않으면 우리도 똑같이 그 실패의 함정에 빠지고 만다. 나는 그 어떤 분열이든 사랑이 부족하기 때문에 생긴다고 생각한다. 사랑에 문제가 생길 때 사람은 자기 교만이 생긴다. 사랑이 없거나 혹은 적을 때 사람은 율법을 주의하게 되고 순서를 강조하고 흠을 잡게 되는 것이다. 사랑에 문제가 생길 때 사람은 교만이 생기고 다른 사람에 대해 질투하여 시기와 분쟁이 생기는 것이다. 성령은 합일의 능력이요 육은 분열의 능력이다. 육이 해결되지 않으면 언젠가는 분열되고 만다.</p>
+
+      <p>그 외에 형제들의 처음의 결점은 교회의 지방적 입장과 범위를 모르고 있었던 것이다. 그들은 교회의 소극적인 면, 곧 죄에 대해서는 분명히 보았지만 교회의 적극적인 면, 곧 지방적 입장과 범위에 서는 것, 서로 사랑하고 한마음 한 뜻으로 합하는 것에 대하여 본 것은 부족했다. 로마 천주교는 이 땅에서 하나의 연합 교회의 합일에 주의를 기울였고 형제들은 이상적인 하늘에 있는 하나의 영적 교회의 합일에 주의를 기울였다. 그들은 보지 못했고 보았어도 완벽하지 못했다. 서신 가운데서 서로 사랑하는 것은 한 지방 교회에서 서로 사랑하는 것이요 합일도 곧 한 지방 교회의 합일이요 연결도 곧 한 지방 교회의 연결이요 건축도 또한 한 지방 교회의 건축이요 추방도 한 지방 교회의 추방인 것이다. 언제든지 교회의 합일을 말할 때는 두 종류밖에 없다. 로마 천주교는 땅 위의 모든 교회의 통일을 말했고 형제들은 하늘 위의 영적 합일을 말했다. 결국 전자는 외면적인 합일에 불과했고 후자는 이상적 합일로서 사실상은 분열된 것이다. 둘 다 성경에 나타난 한 지방 한 지방에 있는 교회, 한 지방 한 지방의 합일에 주의하지 않은 것이다.</p>
+
+      <p>형제들은 각 교회의 지방적 범위를 주의하지 않았다. 「보수파」의 형제들은 각 지방의 일치된 행동을 요구하여 결국 지방의 범위가 무너져 연합회적인 착오에 빠지게 되었고 「공개파」는 각 모임의 독립적 행정을 요구했으므로 결국 한 지방에 허다한 교회가 있게 되어 공리파 곧 회중 단위의 착오에 빠지게 된 것이다. 「보수파」의 형제들은 지방의 범위를 초과했고 「공개파」의 형제들은 지방의 범위에 도달하지 못했다. 그들은 성경에 나타난 교회, 곧 한 지방에 한 교회 오직 하나의 교회가 있는 것을 잊은 것이다. 성경에서 교회에 대해 말한 것은 다 이런 종류의 교회에 대해 말한 것이다. 이상하게도 오늘날에 와서 성경의 지방 교회에 대한 말씀이 영적 교회에 대한 말씀으로 변해 가는 경향이 있다. 어떤 형제들은 교회를 세울 때 지방 교회보다 작은 교회 - 「가정 교회」 그 중의 하나임 - 를 세운다. 그러나 성경에는 각지가 연합된 교회는 없고 한 지방에서 각각 회중이나 집회 단위로 독립적으로 선 교회도 없다. 여러 지방에 한 교회가 있는 것이나 한 지방에 여러 교회가 있는 것은 다 하나님께서 정하신 것이 아니다. 하나님의 말씀은 한 지방에 한 교회인 것을 분명히 나타낸다. 많은 지방에 한 교회가 있는 것은 성경에서 요구하는 합일을 나누는 것이다.</p>
+
+      <p>당시에 형제들의 문제는 곧 성경의 지방의 교훈에 대해 분명치 못한 것이었다. 결국 다른 지방의 형제들과 연합된 연합회식의 합일을 꾀한 사람들은 그 지방 형제들과의 분열을 무서워하지 않았다. 본 집회의 형제들과 문제가 없는 집회 단위를 꾀한 사람들도 그 지방의 다른 집회에 있는 형제들과의 분열을 무서워하지 않은 것이다. 성경에 나타난 지방에 대한 교훈의 중요성을 알지 못했기 때문에 결국에는 다 분열되었다. 하나님은 비실제적인 각 지방의 연합을 원치 않으시며 한 집회 단위로 합일의 범위를 삼는 것, 그것은 지나친 자유요, 지나친 방종이요, 제한이 없고 배움이 없는 것이므로 그것도 원치 않으신다. 단 한 가지라도 뜻이 맞지 않으면 금방 다른 집회를 시작하고 두 세 사람이 독립되어 하나가 되는 것도 원치 않으시는 것이다. 한 지방에는 오직 하나의 합일이 있어야 한다. 이것은 방종하는 육적인 사람에게는 그 얼마나 큰 제한인가? 형제들의 운동은 지금도 여전히 진행 중이다. 「지방」에 대한 빛은 갈수록 더 밝아진다. 하나님께서 어디까지 역사하실는지 우리는 알 수 없다. 우리는 다만 역사의 흐름을 따라 밝아질 뿐이다. 우리가 만일 하나님을 향해 절대적으로 바치고 겸손해진다면 우리는 긍휼을 힘입어 지키심을 받아 잘못되는 것에서 벗어날 수 있다.</p>
+
+      <p>「이기는 자는 내 하나님 성전에 기둥이 되게 하리니 그가 결코 다시 나가지 아니하리라 내가 하나님의 이름과 하나님의 성 곧 하늘에서 내 하나님께로부터 내려오는 새 예루살렘의 이름과 나의 새 이름을 그 위에 기록하리라」 빌라델비아는 하나님의 성전을 서게 한다. 그 위에 세 이름이 기록되어 있으니 하나님의 이름과 새 예루살렘의 이름과 주님의 새 이름이다. 하나님의 영원한 계획이 완성될 때 빌라델비아의 사람들은 주님에게 돌아오고 하나님을 만족케 한다.</p>
+
+      <p>「귀 있는 자는 성령이 교회들에게 하시는 말씀을 들을지어다」</p>
+
+      <p>아무쪼록 당신이 기억해야 할 것은 하나님께서 그의 깊은 마음과 뜻을 감추지 아니하시고 이미 그의 길을 우리 앞에 너무도 분명하게 보이셨다는 것이다.</p>
+    </div>
   </section>
-
-  <section class="section reveal">
-    <span class="eyebrow">이름의 뜻</span>
-    <h3>빌라델비아, 형제를 서로 사랑함</h3>
-    <p>[빌라델비아]는 헬라어로 두 글자를 합한 것으로 그 한 글자의 뜻은 [서로 사랑함]이고 또 한 글자의 뜻은 [형제]로서 곧 [형제를 서로 사랑함]의 뜻이다. [형제를 서로 사랑함]은 곧 하나님의 예언이다. 제사는 두아디라의 특징이며 로마 천주교에서 이루어진 것이다. 회복은 사데의 특징이며 개신교에서 이루어진 것이다. 하나님께서 지금 우리에게 말씀하시는 것은 교회의 완전한 회복이 있을 때 비로소 주님께 찬미를 드릴 수 있다는 것이다.</p>
-    <p>성경을 읽은 사람은 물을 것이다. [이것이 도대체 누구를 가리키는 것인가? 우리는 역사상 어디에서 이것을 찾을 수 있는가?] 이것은 가볍게 지나칠 문제가 아니다. 나는 이미 에베소 교회와 버가모 교회에서 니골라당의 행위와 니골라당의 교훈을 제기한 바 있고 또한 그들이 어떻게 제사장 계급을 대표했는가도 지적했다. 이스라엘 가운데서 레위 지파만 이 제사장이 될 수 있었고 나머지는 제사장이 될 수 없었다. 그러나 교회 안에서는 하나님의 모든 자녀가 다 제사장이다. 베드로 전서 2장과 요한 계시록 5장에서 분명히 피로 사온 모든 사람이 다 제사장이라고 말한다. 그러나 니골라당은 특별히 제사장 직분을 만들어 냈다. 평신도는 세상에 가서 직업을 갖고 세상의 일을 하고 평신도 위의 사람은 와서 제사장 노릇을 하며 영적 일을 관리한 것이다. 여기에서 다시 또 말하거니와 이것은 중간 계급이다. 유대인에게는 유대교가 있었고 니골라당은 행위로부터 교훈에 이르렀다. 신부 계급을 볼 때 그것은 바로 영적 일은 그들이 하고 세상 일은 우리가 하도록 한 것이다. 안수는 그들의 일이요, 그들만이 축복을 할 수 있다. 나 스스로는 어떤 일을 묻지 못하고 그들에게 부탁하여 하나님께 물어야 한다.</p>
-  </section>
-
-  <section class="section reveal">
-    <span class="eyebrow">중간 계급의 문제</span>
-    <h3>사데와 개신교, 그리고 성직 제도</h3>
-    <p>사데에 와서 상태는 향상되었다. 신부 제도는 취소되었지만 성직 제도가 생겨 그것을 대신하게 되었다. 개신교에는 매우 엄격한 국립 교회와 산만한 사립 교회가 있다. 그러나 당신은 국립, 사립을 무론하고 다 중간 계급이 존재함을 볼 수 있다. 전자는 성직 제도요 후자는 목사 제도이다. 이러한 일종의 제사장 계급의 제도는 그를 신부라고 칭하든지, 성직자라고 칭하든지 혹은 목사라고 칭하든지 간에 다 주님께 거절 당하는 것이다. 개신교는 버가모의 니골라당의 교훈을 변용하여 계속한 것이다. 비록 개신교 내에 신부라 칭하는 사람은 없지만 성직자와 목사는 원칙적으로 동일한 것이다 이것은 사역자라고 고쳐 불러도 여전히 그러한 위치에 선 것이고 동일한 냄새를 풍기는 것이다.</p>
-    <p>나는 이미 많은 성경의 근거를 들어 우리가 다 제사장임을 말했다. 그러나 지금 하나님과 사람 사이에는 다툼이 있다. 하나님께서는 교회 안에 있는 사람에게는 다 제사장 노릇을 할 자격이 있다고 말씀하셨는데 사람들은 왜 영적 권위가 신부와 같은 한 무리의 중간 계급의 수중에만 있다고 말하는가? 다시 또 말하거니와 피로 구속 받은 사람은 다 제사장이다. 피로 구속 받은 사람의 수가 곧 제사장의 수이다. 왜 주님은 빌라델비아를 책망하시지 않고 칭찬하시는가? 우리가 기억할 것은 계급의 시작이 버가모에 있었고 실행이 로마에 있었다는 것이다. 그들에게는 그들을 관리하는 교황이 있고 그들을 다스리는 대신과 바티칸의 고관 등등이 있다. 그러나 주님은 [너희들은 다 형제니라 마23:87]고 말씀하신다. 우리가 마태복음 20장 25절과 23장 8절을 주의해야 한다.</p>
-    <div class="pull">
-      예수께서 제자들을 불러다가 가라사대 이방인의 집권자들이 저희를 임의로 주관하고 그 대인들이 저희에게 권세를 부리는 줄을 너희가 알거니와
-      <cite>마20:25</cite>
-    </div>
-    <div class="pull">
-      그러나 너희는 랍비라 칭함을 받지 말라 너희 선생은 하나요 너희는 다 형제니라
-      <cite>마23:8</cite>
-    </div>
-    <p>성경에 [목사]는 있으나 목사 제도는 없다. 또한 이 글자의 원문은 목자라는 뜻으로서 목동이라고 칭할 수 있는 것이다. 주 예수님께서는 너희들 가운데 선생이 있을 수 없고 아버지도 있을 수 없다고 말씀하신다. (마23:8-9) 그러나 우리는 로마 천주교에서 신부의 [아버지]와 개신교에서 목사의 [선생]을 볼 수 있다. 19세기의 하나의 대 부흥은 중간 계급을 없앤 것이다. 사데 후에 또 하나의 대 부흥이 있었는데 그것은 교회 가운데서 형제를 서로 사랑하고 중간 계급을 없앤 것이다. 이것이 곧 빌라델비아이다.</p>
-  </section>
-
-  <section class="section reveal">
-    <span class="eyebrow">1825년, 더블린</span>
-    <h3>몇 성도들에게서 시작된 회복</h3>
-    <p>1825년 아이레의 수도 더불린의 몇 성도들은 그들의 마음이 하나님께 감동을 받아 어떤 교파를 막론하고 그 안에 있는 하나님의 자녀들을 사랑했다. 이 사랑은 교파의 담으로도 막을 수 없는 것이었다. 그들은 처음에 성경을 보고 사람이 분열시켜 여러 갈래로 나누었으나 그리스도의 몸은 하나라는 하나님의 말씀을 발견했다. 그러므로 그들은 처음에 주일마다 집회를 주관하는 제도나 한 사람이 설교를 하는 제도는 성경에 합당치 못한 것임을 발견했다. 그러므로 그들은 처음에 주일마다 집회하고 떡을 떼며 기도했다. 1825년 곧 천여 년의 로마 교회와 몇 백 년의 개신교 이후 제일 처음으로 회복된 것은 성경에 나타난 단순하고 자유롭고 영적인 예배였다.</p>
-    <p>처음에 시작할 때에는 사람이 불과 두 명에 지나지 않았고 후에도 사오 명에 불과했다. 이러한 성도들은 세상의 눈으로 볼 떼에는 비천하고 이름 없는 사람들이었지만 그들 가운데 주님이 계셨고 성령의 안위가 있었다. 그들은 두 가지의 분명한 진리의 입장에 서 있었다. 첫째 교회는 그리스도의 몸이며 오직 하나라는 것이다. 둘째 신약 성경 안에는 성직 계급이 없으며 사람이 세워서 말씀을 전하는 것은 다 성경에 합당치 못하다는 것이다. 그들이 믿는 것은 참 그리스도인은 모두 이 한 몸의 지체들이라는 것이다. 그들은 그들 가운데 온 모든 사람을 그 사람이 어떤 교파에 속했든지 따뜻하게 환영했고 그들에게서는 나뉘었다는 느낌을 가질 수 없다. 그들이 믿는 것은 진실한 그리스도인은 다 제사장의 직분을 갖고 있으므로 누구든지 자유롭게 지성소에 들어갈 수 있다는 것이었다. 그들이 또 믿는 것은 승천하신 주님이 각종 은사를 교회에 주신 것은 성도를 온전케 하고 그리스도의 몸을 세우게 하려 함이라는 것이었다. 그러므로 그들은 성직 계급의 두 가지 죄-제사와 설교-에서 벗어날 수 있었다.</p>
-  </section>
-
-  <section class="section reveal">
-    <span class="eyebrow">다비와 벨렛</span>
-    <h3>형제가 된 첫날</h3>
-    <p>이 원칙은 그들로 그리스도 안에 있는 모든 사람을 환영하게 했고 그들로 다같이 형제가 되게 했고 동시에 성령으로 세운 말씀의 사역을 해방하게 했고, 봉사하게 했다. 이때 성공회의 성직자인 다비(John Nelson Darby)는 비록 그가 성직 제복을 입고 있었으나 자기 교회의 위치가 성경에 합당치 못함을 인정 했으므로 항상 형제들과 함께 모이고 있었다. 다비는 하나님께 속한 사람이요 큰 능력을 가진 사람이었다. 또한 다비는 능력 있는 사람이었을 뿐 아니라 고난을 받고자 하는 사람이었다. 그는 고난을 달게 받고자 하는 사람이었을 뿐 아니라 하나님을 알고 성경을 알고 육체를 심판하는 영적인 사람이었다. 1837년에 그는 정식으로 성공회를 벗어나 성직자의 제복을 벗고 하나의 단순한 형제로서 다른 형제들과 모였다.</p>
-    <p>본래부터 있던 형제들이 보는 것에도 한도가 있었으나 다비가 정식으로 들어온 후부터는 하늘이 빛이 홍수같이 쏟아져 내려왔다. 여러 면에서 다비의 역사는 웨슬레와 매우 흡사했다. 그러나 그들의 성공회에 대한 태도는 완전히 달랐다. 일세기 앞의 웨슬레에게는 이 국립 교회를 담대히 벗어나려는 느낌이 없었고 일세기 후의 다비에게는 계속 성공회에 있을 수 없다는 느낌이 있었던 것이다. 그러나 열심과 전심을 다함과 충성심은 둘에게 많이 상통되는 점이었다.</p>
-    <p>그 해에 벨렛(J. G. Bellet)도 와서 집회에 참석했는데 그도 깊고 신령한 사람이었다. 그는 이 단순하고 성경적인 집회에서 크게 감동을 받고 아래와 같이 그 당시의 상황을 말했다.</p>
-    <div class="pull">
-      한 형제가 내게 말하기를 '성경에서 그리스도의 제자로서 함께 모인 성도들은 주님의 명령을 좇아 자유롭게 떡을 뗐다. 또 사도의 본을 따른다면 우리는 주님의 죽으심을 기념하며 주님이 떠나실 때 주신 명령을 순종하기 위해 마땅히 매 주일을 분별해야 한다'고 했다.
-    </div>
-    <p>벨렛은 또 말했다.</p>
-    <div class="pull">
-      언젠가 내가 한 형제와 같이 길을 갈 때 그 형제가 내게 말하기를 '내가 믿는 바로는 주님의 우리에 대한 뜻은 바로 이것입니다. 우리는 단순히 제자의 자격으로 모이며 어떤 설교를 기다리지 말아야 합니다. 다만 주님께서 우리 전부를 온전케 하시기를 의지하고 성령이 임의로 우리중의 누구든 선택하여 말씀을 전하게 하는 것입니다.'라고 했다. 그가 이 몇 마디 말을 할 때 내 마음은 빛을 보았다. 그 날은 내 생일과 같은 날이었고 형제가 된 첫날이었다.
-    </div>
-    <p>형제들은 이렇게 점차 찾아가며 점차 계시를 얻고 점차 빛을 보게 된 것이다.</p>
-  </section>
-
-  <section class="section reveal">
-    <span class="eyebrow">확산과 세워진 증인들</span>
-    <h3>흩어진 형제들, 세워진 증인들</h3>
-    <p>일 년이 지나 1828년에 다비는 [교회의 성격과 합일]이라는 한 권의 소책자를 출간했다. 이 한 권의 책은 형제들이 출간한 천만 권의 책 중에서 첫 번째 책이었다. 다비는 이 책에서 형제들에게는 어떤 새로운 교파나 교회 연합회를 설립하려는 의사가 없음을 표명했다.</p>
-    <div class="pull">
-      첫째로 분열된 단체들의 형식적인 연합은 바람직한 일이 아니다. 놀라운 것은 연합을 모색하는 개신교인들이 많다는 것이다. 내가 믿는 바로는 이러한 연합은 바람직하지 못하다. 그렇게 연합한 단체는 바람직하지 못하다. 그렇게 연합한 단체는 결코 하나님의 교회로 인정될 수 없으며 그것은 다만 로마의 연합에 불과할 뿐이다. 이러한 단체 안에서는 교회 생활과 말씀의 능력이 완전히 상실된다. 더욱이 영적 생명의 합일은 절대로 불가능한 것이다. 진실한 합일은 오직 성령의 역사의 결과라야 가능한 것이다. 하나님의 아들의 나라의 완전한 근거에서 하나님의 모든 자녀를 포함하지 않고서 완전한 축복을 받을 수 있는 집회는 없다. 왜냐하면 이 집회는 이 축복을 받을 생각을 하지 않았기 때문이고 이 집회의 성질은 이 축복을 포함하지 않았기 때문이다. 성경에서 말하기를 집회는 그의 이름을 의지하고 그의 이름은 곧 축복을 위한 것이라고 했다. 나아가서 합일은 교회의 영광이다. 그러나 우리들의 이익을 취하고 증진시키는 합일이 아니며 교회의 합일은 곧 성령의 합일이다. 이 합일은 성령 안에서만 되는 것이므로 오직 영에 속한 사람들 사이에서만이 완전케 된다. 그렇다면 하나님의 백성은 어떻게 해야 하는가? 주님을 기다리고 성령의 교훈을 따라 기다리며 성령의 생명을 따라 그의 아들의 형상을 닮아가야 한다. [만일 그들이 선한 목자가 어디에서 양떼를 치는지 안다면 그들로 양떼의 발자취를 따라가게 하라]
-      <cite>다비, 「교회의 성격과 합일」</cite>
-    </div>
-    <p>또 다른 곳에서 다비는 말했다. [우리의 상은 주님이 상이요 우리의 상이 아니므로 우리는 하나님이 받으시는 모든 자 곧 곤고한 죄인, 도피하여 주님을 찾아와 피난처로 사는 자, 자기 속에 안식을 갖지 못하는 자, 오직 그리스도 안에서만 안식을 얻는 자를 받아야 한다] 한 번은 하나님께서 영국의 가이아나(Guiana)와 이탈리아에서 동시에 역사하시어 동시에 똑 같은 모임이 일어났다. 1929년에 아라비아에서 또 모임이 있었다. 1830년에는 영국의 런던, 플리머스(Plymouth), 브리스톨(Bristol)에서 다 모임이 있었다. 곧 미국의 많은 곳에서도 모임이 있었다. 유럽 대륙에서도 많은 모임이 있었다. 곧 전세계 각지에서 주님을 사랑하는 사람들이 대부분 이러한 모임을 시작했다 비록 표면적인 연합은 없었으나 그것은 다 하나님께서 일으키신 것이다.</p>
-    <p>이러한 형제들이 일어난 데에는 하나의 특징이 있었는데, 그것은 곧 높은 지위에 있는 사람이 높은 지위를 버리고, 지위가 있는 사람은 지위를 버리고, 학위가 있는 사람은 학위를 버리고, 다 같이 세상과 교회에서의 계급을 버리고 단순히 와서 그리스도의 제자가 되어 피차 형제가 된 것이다. [아버지]라는 말이 로마 천주교에서 상용되고 [선생]이라는 말이 개신교에서 상용되어 온 것처럼 이제는 [형제]라는 말이 그들 가운데서 상용되었다. 그들은 주님의 이끌림을 받고 주님을 사랑하므로 자연히 서로 사랑하게 되었고 한 곳에 모였다.</p>
-    <p>몇 십 년 동안에 하나님은 많은 은사를 그의 교회에 주셨다. 하나님은 다비(J. N. Darby) 벨렛(J. G. Bellet) 외에도 많은 형제들에게 특별한 직분을 주시어 그분의 교회가 공급을 받게 하셨다. 고아원을 설립한 뮬러(George Muller)는 믿음의 기도를 회복했다. 그의 일생 동안에 믿음의 기도가 응답된 것은 백오십 만 번이었다. 모세 오경을 주해한 매킨토시(C. H. Mackintosh)는 예표의 인식에 대해 회복했다. 무디(Moody)는 전세계의 책이 다 탄다 해도 그에게 한 권의 성경과 매킨토시의 모세 오경 주해만 있으면 만족한다고 했다. 덱(James G. Deck)은 우리에게 좋은 찬송가를 많이 주었다. 커팅(George Cutting)은 구원의 확신을 회복했다. 그의 저서중의 하나인 [구원, 확신, 기쁨]은 1930년에 이미 삼천 만 권이 팔렸으며 성경 외에 가장 판로가 큰 책이었다. 켈리(William Kelly)는 많은 주해를 쓴 사람이었는데 스펄전(C. H. Spurgeon)은 켈리에 대해 [그의 생각은 우주처럼 크다]고 말했다. 그랜트(F. Grant)는 십구, 이십 세기에 있어서 성경을 가장 잘 아는 사람 중의 하나였다. 앤더슨(Robert Anderson)은 근대에서 다니엘서를 가장 잘 아는 사람이었다. 스탠리(Charles Stanley)는 하나님의 으를 전파함으로 사람들에게 구원을 가장 잘 전한 사람이었다. 트레젤스(S. P. Tregelles)는 유명한 신약 문헌학자였다. 밀러(Andrew Miller)의 교회사는 모든 교회사 중에서 가장 성경과 일치하는 책이다. 체프만(R. C. Chapman)도 주님이 크게 쓴 사람 중의 하나였다. 이들이 다 당시의 형제들이었다. 이 외에도 더 자세히 적는다면 형제들 가운데 천 명 이상이 다 주님께서 소중하게 쓰신 분들이다.</p>
-    <p>우리는 이제 그 형제들이 우리에게 준 것이 무엇인가를 보아야 한다. 그것은 주님의 피가 어떻게 하나님의 의를 만족케 하는가, 구원의 확신이 약한 성도가 어떻게 그리스도가 열납됨과 같이 그리스도 안에 열납될 수 있는가 구원의 근거가 되는 하나님의 말씀을 어떻게 믿는가 등이었다. 교회의 역사가 시작된 이래 그 어떤 시대에도 복음이 그들보다 더 분명한 적은 없었다 뿐만 아니라 그들이 우리에게 보여 준 것은 교회가 온 세상을 얻을 수 없으며, 교회는 하늘의 부르심을 받았으며, 교회의 소망은 세상적인 데 있지 않다는 것이다. 또 그들은 처음에 여인을 해석하여 나라와 환난과 들림 받음과 신부(新婦)를 우리에게 보여 주었다. 우리가 지금 알고 있는 장래 일은 그들이 아는 것의 몇 퍼센트밖에 안 되는 것이다. 또 그들은 우리에게 죄의 율이 무엇인가, 해방이 무엇인가, 주님과 함께 십자가에 못 박힘이 무엇인가를 보여 주었다. 또 그들이 우리에게 보여 준 것은 교파의 죄악과 그리스도의 몸의 합일, 성령의 합일이었다. 또 그들이 보여 준 것은 유대교와 교회의 분별이었다. 로마 천주교와 개신교 사이에서는 이 차이가 보이지 않았으나 그들은 우리에게 다시 이 분별을 보여 주었다. 그들은 또 우리에게 중간 계급의 죄악을 알려주었고 하나님의 자녀는 다 제사장이요 다 하나님께 봉사할 수 있다는 것을 알려 주었다. 그들은 고린도 전서 14장의 집회 원칙의 회복을 우리에게 알려 주고 말씀 전하는 것은 한 사람의 일이 아닌 두 세 사람의 일이요, 말씀을 전하는 근거는 세우는 데 있지 않고 성령의 은사에 있음을 우리에게 보여 주었다.</p>
-    <p>오늘날 그 어느 곳도 그들보다 많은 진리를 회복한 곳은 없다. 그러므로 팬톤(Panton)은 서슴없이 말하기를 [형제들의 운동과 그 중요성은 종교 개혁보다 훨씬 위대한 것이다]라고 했다. 토마스 그리피스(Thomas Griffith)도 말하기를 [하나님의 자녀 중에서 진리를 가장 바르게 잘 해석한 사람들이 바로 이들이다]라고 했다. 헨리 아이온사이드(Hentry Ironside)는 [하나님을 아는 모든 사람은 형제들을 알든 모르든 직접적으로나 간접적으로 다 형제들의 도움을 받았다]고 말했다.</p>
-  </section>
-
-  <section class="section reveal">
-    <span class="eyebrow">종교 개혁과의 차이</span>
-    <h3>종교 개혁보다 위대한 운동</h3>
-    <p>이 운동은 종교 개혁보다도 더 위대한 것이었다. 여기에서 나는 빌라델비아의 역사가 종교 개혁의 역사보다 더 크다고 말하고 있다. 종교 개혁이 우리에게 주지 못한 것을 빌라델비아는 우리에게 주었다. 우리가 하나님께 감사 드리는 것은 교회의 문제를 형제들의 운동이 해결했다는 점이다. 하나님의 자녀의 위치도 거의 다 회복시켰다. 그러므로 이들이 양적으로나 질적으로 개신교보다 더 큰 것을 볼 수 있다. 다른 면으로 우리가 한가지 주의해야 할 것은 형제들의 운동이 종교 개혁보다 더 이름을 날린 것은 아니었다는 점이다. 종교 개혁은 칼과 창으로 이루어졌고 형제들의 운동은 전도로 이루어졌다. 종교 개혁을 위해 많은 사람이 유럽 전쟁에서 죽었다. 종교 개혁의 한 가지 원인은 그들의 이름을 날리기 위해서 정치와 관계를 맺은 것이다. 많은 국가가 종교 개혁을 하여 정치적으로 로마의 세력에서 벗어났다. 정치와 관계없는 자는 사람들에게 아려지기 어려웠다.</p>
-    <p>또 형제들은 두 가지를 보여 주었는데 그 하나는 우리가 말하는 조직적인 세계 즉 정신 세계요, 또 다른 하나는 형제들이 말하는 이름, 곧 기독교의 세계이다. 그들은 정신 세계를 벗어났을 뿐 아니라 개신교가 대표하는 기독교의 세계도 벗어났다. 그러므로 그들은 개신교를 광고하지 않은 것이다. 그들은 죄악의 세계에서 나왔을 뿐 아니라 기독교의 세계에서도 나온 것이다. 그 때부터 사람들은 교회가 무엇인지 알게 되어 교회는 그리스도의 몸이요 하나님의 자녀들은 한 교회이기 때문에 나뉠 수 없다는 것을 알게 되었다. 그들이 중시한 것은 곧 형제요, 서로 진실히 사랑하는 것이었다. 주 예수님은 하나의 교회가 나오리니 그 이름은 바로 [빌라델비아]라고 말씀하셨다. 우리는 이제 계시록을 보자.</p>
-  </section>
-
-  <section class="section reveal">
-    <span class="eyebrow">계시록 3:7-13 강해</span>
-    <h3>한 절 한 절, 빌라델비아에게 하신 말씀</h3>
-
-    <span class="verse-tag">계 3:7</span>
-    <p>[빌라델비아 교회의 사자에게 편지하기를] 빌라델비아는 형제가 서로 사랑함이다. 하나님은 빌라델비아 교회의 무엇을 칭찬하셨는가? 그분이 말씀하신 것은 형제가 서로 사랑하고 중간 계급을 완전히 제거해 버린 것이다. 나는 이 기회에 몇 마디 더 말하고 싶다. 교회 안에는 남자도 없고 여자도 없다. 교회 안에는 자매가 하나도 없다. 여기 우리가 앉아 있을 때 다 형제요 자매는 없는 것이다. 그러면 우리 자매는 물을 것이다. [나는 누구입니까?] 다 형제다. 왜 우리가 형제인가? 우리는 그리스도의 생명을 가졌기 때문이다. 오늘날 이 세계에 많은 남자가 있으나 그들은 우리 형제가 아니다. 사람으로서 형제가 되는 것이지 남자로서 형제가 되는 것이 아니다. 당신 안에 그리스도의 생명이 있고 내 안에 그리스도의 생명이 있기 때문에 우리는 형제인 것이다.</p>
-    <p>주 예수께서 승천하실 때 [내가 내 아버지 곧 너희 아버지의 독생자요. 20장의 그는 아버지의 장자이다. 제1장에서 하나님에게는 오직 그 아들만이 있었지만 20장에 와서는 그의 생명을 사람들에게 나누어주어 그는 자연히 장자가 되었고 우리는 다 형제들인 것이다. 죽었다가 사심으로 하나님의 독생자는 장자가 되었다. 그러므로 우리는 그의 생명을 받았기 때문에 능히 형제가 될 수 있다. 그리스도의 생명을 받았기 때문에 모두 다 형제다. 남자가 그리스도의 생명을 받아 형제가 되는 것같이 여자도 그리스도의 생명을 받아 형제가 된다. 여자가 여성인 것은 그리스도 안에서는 아무 관계가 없다. 남자든지 여자든지 한 생명을 받음으로써 형제가 되는 것이다. 모든 서신은 다 형제에게 쓴 것이요 자매에게 쓴 것이 아니다. 개인적으로 볼 때 어떤 사람은 자매이지만 교회 안에서는 오직 형제만이 있을 뿐이다. 그 생명으로 인해서 우리는 다 하나님의 아이들이 되었다. 신약 안에 있는 [자녀(Sons and daughter)]는 다 [아이들(Children)]로 번역되어야 한다. 원문을 보면 고린도 후서 6장을 제외하고는 하나님께 여아는 없다.</p>
-    <p>당신은 보았는가? 교회에서는 모두가 형제의 위치에 서는 것이다. 언젠가 상해에 있을 때 나는 미장공인 어떤 형제에게 말했다. [가서 몇 형제들을 불러 오시오] 그가 물었다. [남자 형제를 데려 올까요? 여자 형제를 데려 올까요?] 이 사람은 하나님의 교훈을 받은 사람이다. 그러므로 우리가 자매라 부르는 것은 개인에 대한 호칭일 뿐이요. 교회 안에 남녀의 구별은 없는 것이다. 교회 안에는 자유자도 없고 종도 없다. 그가 주인이라 하여 그가 얻은 생명이 큰 것일 수 없고 그가 종이라 하여 그가 얻은 생명이 작은 것일 수 없다. 나는 전에 어떤 형제가 내게 한 말을 기억한다. [정부 관리들에게 말씀을 들려주기 위해서는 보통 집회하는 곳은 별로 좋지 않으니 특별한 곳을 준비하는 것이 좋겠습니다.] 나는 말했다. [당신은 장차 어떤 간판을 달 생각입니까?] 그것은 주님의 교회가 아닌 관청 교회이다. 교회 안에는 관리가 없다. 교회 안에서는 모든 사람이 다 형제다. 하나님이 당신의 눈을 뜨게 하실 때 세상에서는 다른 사람보다 높은 것이 영광이지만 교회 안에서는 이런 구별이 없음을 보게 될 것이다. 바울이 말하기를 그리스도 안에는 유대인도 헬라인도 없고 종도 자유자도 없고, 남자도 여자도 없다고 했다. 교회는 그러한 구별 위에 선 것이 아니고 형제의 사랑 위에 선 것이다.</p>
-    <p>다른 곳과 같이 여기에서도 주님은 자기 이름을 제기하셨다. 여기에서 말씀하시기를 [거룩하고 진실하사 다윗의 열쇠를 가지신 이 곧 열면 닫을 사람이 없고 닫으면 열 사람이 없는 그이 계3:7]라고 하셨다. 거룩함은 그의 생명이요, 그분 자신이 곧 거룩함이다. 그는 하나님 앞에 참이요 그는 곧 하나님의 실제요 하나님의 실제는 곧 그리스도이다. 그의 손 안에는 열쇠가 있다. 여기에서 내가 부탁하는 것은 이 한 가지를 주의하라는 것이다. 사데가 일어나 주님을 위해 간증할 때 땅에 있는 군왕들은 그를 도와 전쟁을 했다. 유럽 대륙에서 수십 년, 영국에서 수십 년이었다. 그러나 형제들의 운동은 어떠했는가? 세력도 없었고 배후에서 돕는 자도 없었다 그러면 어떻게 했는가? 주님께서 말씀하시기를 그는 다윗의 열쇠를 가지셨다고 했다. 이것은 곧 권위를 의미한다(성경은 다윗을 왕이라 칭했다) 이것은 무력의 문제가 아니요, 광고의 문제도 아니요, 문을 여는 문제인 것이다. 영국의 한 신문의 편집자는 말하기를 [나는 이렇게 많은 형제들이 있으리라고는 생각지 못했고 그들이 그렇게 빨리 성장할 줄은 몰랐다]고 했다. 당신이 만일 전세계를 여행해 본다면 각처에 많은 형제들이 있음을 알 수 있을 것이다. 그들이 비록 진리를 아는 데 있어서 깊은 점도 있고 얕은 점도 있지만 형제의 지위로서는 같은 것이다. 이런 상태를 볼 때 우리는 하나님께 감사해야 할 것이다. 하나님은 열면 닫을 사람이 없고 닫으면 열 사람이 없다고 말씀하셨다.</p>
-
-    <span class="verse-tag">계 3:8</span>
-    <p>[내가 네 행위를 아노니 네가 적은 능력을 가지고도] 이것을 읽을 때 우리는 자연히 스룹바벨이 돌아온 이후 어느 선지자가 한 말을 생각하게 된다. [작은 일의 날이라고 멸시하는 자가 누구냐 슥4:10] 여러분은 작은 일의 날을 멸시하지 말라. 이것은 곧 성전을 건축하는 날이다. 성경 안의 교회의 큰 예표는 바로 성전이다. 다윗이 왕 노릇할 때는 하나님의 백성들이 하나가 되었다. 그 후에는 나뉘어져서 하나는 유대, 하나는 이스라엘이 되었다. 하나님의 백성이 나뉘어질 때 동시에 우상이 일어났고 간음을 했고 결국에는 바벨론으로 포로로 사로잡혀 가게 되었다. 누구나 바벨론으로 포로 되어 간 것이 곧 두아디라 로마 천주교 의 예표임을 인정하고 있다. 성경에서 바벨론은 로마를 예표하기 때문에 교회도 바벨론의 포로가 되었던 것이다.</p>
-    <p>하나님의 백성이 포로 되었던 곳에서 돌아온 후 그들은 무엇을 했는가? 그들은 몹시 미약하게, 한 무리씩 한 무리씩 돌아온 것이다. 그들은 성정을 건축했다. 그것은 형제들의 운동의 예표와 매우 흡사했다. 거기에는 많은 유대인 곧 옛 성전을 본 노인들이 있었다. 그들은 이제 이 성전의 영광이 솔로몬 때의 영광에 비해 너무도 보잘것없기 때문이었다. 그러나 하나님은 작은 선지자를 통해 말씀하셨다. [너희는 작은 일의 날이라고 멸시하지 말라, 이것은 회복의 날이다.] 주님은 여기에서도 같은 말씀을 하셨다. [네가 적은 능력을 가지고] 오늘 세상에서의 교회의 간증은 처음의 오순절과 비교할 때 정말 작은 일의 날에 불과한 것이다.</p>
-    <p>[내 말을 지키며 내 이름을 배반치 아니하였도다] 주님은 그들의 두 가지를 인정하셨는데, 그것은 주님의 이름을 버리지 않은 것과 주님의 말씀을 버리지 않은 것이다. 교회 역사 가운데 그 어떤 시대에서도 하나님의 말씀을 형제들같이 안 때는 없었다. 마치 홍수가 쏟아져 내려오는 것처럼 빛이 많았다. 내가 상해에 있을 때 어느 날 저녁 한 형제를 만났는데 그는 자기가 배 안의 요리사라고 했다. 나는 그와 오래 얘기를 나눴는데 보통 전도사 중에서도 그 사람처럼 하나님의 말씀을 아는 사람은 드물 것 같았다. 또 한 형제가 있었는데 어떤 사람이 그에게 [왜 성경 안에 수금은 있는데 피리는 없느냐?]고 물었다. 그 형제가 대답하기를 [하나님이 음악을 좋아하시는 것도 사실이지만 찬송을 더 좋아하십니다.]라고 했다. 그렇다 만일 입으로 피리를 불면 찬송은 어떻게 하겠는가? 그는 부지중에 이런 말을 했다. 우리는 이 작은 데에서도 그가 하나님의 말씀을 잘 알고 있음을 느낄 수 있다. 또 어떤 자매가 곤란한 형편에 빠져 있을 때 한 형제가 그 자매를 찾아가 원인이 무엇이냐고 물었다. 그 자매는 [분명치 못한 입장에서 전쟁을 했으니 결국은 머리털이 나무에 걸리게 된 것입니다]라고 대답하는 것이었다. 또 배 안에서 어는 선교사가 한 형제에게 말했다. [나는 신약의 여러 곳에서 떡과 생선을 말한 것이 참 신기합니다.] 그 형제가 대답하기를 [그것은 땅의 풍성과 바다의 풍성을 더한 것입니다]라고 했다. 그렇다! 그들의 한 가지 특징은 곧 그들이 하나님의 말씀을 잘 아는 것이었다. 당신이 만일 그들 중의 한 작은 형제를 만나 본다면 그가 많은 선교사들보다 더 명확한 것을 알고 있음을 알 수 있을 것이다.</p>
-    <p>주님께서는 [네가 내 이름을 배반치 아니하였도다]라고 말씀하셨다. 1825년 이후 형제들이 말하기를 우리는 다만 [그리스도인(Christian)]이라고 불릴 수 있다고 했다. 그들에게 당신이 누구냐고 묻는다면 그들은 [나는 그리스도인 입니다.]라고 대답할 것이다. 그러나 당신이 감리교에 다니는 사람에게 물어 보면 그는 [나는 감리교인 입니다]라고 대답할 것이다. 장로교에 다니는 사람에게 물어 보면 [나는 장로교인 입니다.]라고 대답하고, 침례교에 다니는 사람은 [나는 침례교인 입니다]라고 대답할 것이다. 또 성결교에 다니는 사람에게 물어 보면 [나는 성결교인 입니다]라고 대답할 것이다. 사람들은 그리스도 외의 많은 이름을 붙여 자기 자신을 부르고 있다 그러나 하나님의 자녀들은 오직 하나의 이름만으로 자기를 부른다. 주 예수께서 말씀하시기를 [내 이름으로 기도하고] [내 이름으로 모이라]고 하셨다. 우리는 다만 주님의 이름만을 가질 수 있다. 화이트 필드(White Field)는 말했다. [모든 이름은 다 버려지고 오직 그리스도의 이름만이 높여지기를 원합니다.] 형제들은 일어나서 바로 이와 같이 했다. 주님의 예언과 같이 그들은 주의 이름을 가장 존중했다. 그리스도의 이름은 그들의 중심이었다. 그들 가운데에는 항상 이런 구절이 있었다. [그리스도의 이름이 우리를 세상으로부터 충분히 분별해 낼 수 있지 않은가? 우리가 주님의 이름을 메고 다니는 것이 좋지 않은가?]</p>
-    <p>나는 언젠가 기차 안에서 만난 한 성도를 기억한다. 그는 나에게 어느 파의 그리스도인이냐고 물었다. 나는 그에게 [나는 단지 그리스도인 입니다.]라고 대답했다. 그는 [세상에 그런 그리스도인이 어디 있습니까? 나는 단지 그리스도인 입니다. 사람이 그리스도인이 되었다는 것이 아무 의의가 없습니까? 당신은 어는 종파의 그리스도인이라고 말해야 의의가 있단 말입니까? 나는 다만 그리스도인인 것에 만족할 뿐입니다.] 그 날 우리는 좋은 교제를 가졌다. 당신이 보아야 할 한 가지 일은 많은 사람들의 근본적인 생각, 즉 주님의 이름만으로는 부족하다고 여기는 것이다. 많은 사람들이 교파의 이름을 넣어야 하고 기어코 주님의 이름 외에 또 한 이름을 넣어야 한다고 생각하는 것이다. 형제들이여 여러분은 우리의 태도가 완고하다고 생각지 말라 주님은 여기에서 [너희가 내 이름을 배반치 아니하였도다]라고 말씀하셨다. 만일 내 느낌이 옳다면 모든 이름은 다 그를 욕되게 하는 것이다. 이[배반]은 베드로가 주님을 부인한 것과 똑 같은 글자다 나는 어떠한 그리스도인인가? 나는 그리스도인이다. 나는 다른 이름을 더 원치 않는다. 많은 사람들이 그리스도의 이름을 존중하려 하지 않고 단순히 그리스도인이라 칭함 받기를 원치 않는다. 그러나 하나님께 감사 드리는 것은 빌라델비아의 예언이 형제들 안에서 이루어진 것이다. 그들에게는 달리 구별 짓는 이름이 없었다. 그들은 형제들이요 [형제 교회]가 아니다.</p>
-    <p>[볼지어다 내가 네 앞에 열린 문을 두었으되 능히 닫을 사람이 없으리라] 주님은 빌라델비아 교회에게 [열린 문]을 말씀하신다. 사람들은 보통, [네가 만일 성경대로 행하면 문이 곧 닫힐 것이다. 주님에게 순종하는 것은 가장 어려운 것이요 문이 닫히는 것이다]라고 말한다. 그러나 여기에 하나의 특별한 약속이 있는데 그것은 [볼지어다 내가 네 앞에 열린 문을 두었으되 능히 닫을 사람이 없으리라]고 하신 것이다. 그들에게 있어서 이것은 사실이었다. 전세계의 그 어떤 사람들도 성경 강연으로나 전도로나 그들처럼 기회를 많이 가진 적은 없었다. 유럽, 미국 아프리카에서 다 그러했다. 인간의 지지와 구호와 광고와 보조가 없어도 그들은 항상 많은 기회가 있어 일을 할 수 있었고 일하는 문은 항상 열려 있었다.</p>
-
-    <span class="verse-tag">계 3:9</span>
-    <p>[보라 사단의 회 곧 자칭 유대인이라 하나 그렇지 않고 거짓말하는 자들 중에서 몇을 네게 주어 저희로 와서 네 발 앞에 절하게 하고 내가 너를 사랑하는 줄을 알게 하리라] 전에 우리는 기독교가 유대교로 변한 네 가지 면 곧 중간 계급 의문과 교리, 물질적인 성전 세상에 속한 약속을 말했다. 주님은 어떻게 말씀하시는가? [내가 저희로 와서 네 발 앞에 절하게 하고] 유대교는 형제들의 손 안에서 파괴된다. 전세계 각지에서 이러한 운동이 일어나고 그들이 있는 곳에서 유대교는 실패한다. 참으로 하나님을 아는 사람에게 있어서는 유대교의 중요한 힘은 이미 지나간 것이다.</p>
-
-    <span class="verse-tag">계 3:10</span>
-    <p>[네가 나의 인내의 말씀을 지켰은즉] 이것은 1장의 [예수의 환난과 나라와 참음에 동참함]과 연결된다. 여기에서 [인내(참음)]라는 두 글자는 명사도 형용사도 아니다. 오늘은 그리스도의 인내의 시대이다. 오늘 주님은 주님을 조롱하는 많은 사람을 만나시지만 그분은 인내할 뿐이다. 어느 날 심판이 올 것이다. 그러나 오늘은 그분이 참으신다. 오늘 그분의 말씀은 인내의 말씀이다. 그분은 여기에서 명예 없는 비천한 사람이요 나사렛 사람이요 목수의 아들이다. 우리가 주님을 따를 때 그분은 [나의 인내의 말씀을 지키라]고 하신다.</p>
-    <p>[내가 또한 너를 지키어 시험의 때를 면하게 하리니 이는 장차 온 세상에 임하여 땅에 거하는 자들을 시험할 때라] [시험할 때]는 원문으로는 [시험할 시각]이므로 이 구절의 원 뜻은 [내가 너를 지켜 시험의 때를 면하게 하리니 이는 장차 온 세상에 임하여 땅에 거하는 자들을 시험할 시각이라]인 것이다. 예를 들어 내가 중경(重慶)에서 [내가 너로 폭탄을 맞지 않게 해주마]라고 말한다면 그 뜻은 바로 네가 중경에 계속 있어도 폭탄을 맞지 않게 해 준다는 뜻이다. 그러나 만일 내가 [내가 그 시각에 너를 지켜 주겠다]라고 한다면 그것은 가 시각 전에 너를 성도(成都)로 떠나게 하리라는 것이다. 온 세상이 시험을 당할 때 (이것은 우리가 다 아는 바와 같이 대환난을 가리킨다.) 우리는 그 환난을 당하지 않는다. 그 시각이 오기 전에 우리는 이미 들림 받게 되는 것이다. 전체 성경 가운데 단 두 군데에서 들림 받는 것에 대한 약속을 말했다 하나는 누가복음 21장 36절이고 하나는 계시록 3장 10절이다. 오늘 우리는 주님을 따르는 이 날을 허송 세월 하지 말고 빌라델비아의 가는 길을 배우고 주님께서 우리를 모든 시험에서 건져내시기를 구해야 한다.</p>
-
-    <span class="verse-tag">계 3:11</span>
-    <p>[내가 속히 임하리니 네가 가진 것을 굳게 잡아 아무나 네 면류관을 빼앗지 못하게 하라] 주님은 [내가 속히 임하리라]고 말씀하셨다. 그러므로 이 교회는 주님이 오실 때까지 계속된다. 두아디라는 지나가지 않고 사데도 지나가지 않고 빌라델비아도 지나가 버리는 것이 아니다. [네가 가진 것을 굳게 잡아]는 곧 [나의 말씀]과 [나의 이름]을 굳게 잡으라는 것이다. 우리는 주의 말씀을 잊지 말고 주님의 이름을 부끄럽게 하지 말아야 한다. [아무나 네 면류관을 빼앗지 못하게 하라] 빌라델비아의 모두가 다 면류관을 갖고 있다. 다른 교회에서는 얻는 것이 문제이나 여기에서는 잃는 것이 문제이다. 주님은 너희들이 다 면류관을 갖고 있다고 하신다.</p>
-    <div class="pull">
-      이제 후로는 나를 위하여 의의 면류관이 예비 되었으므로 주 곧 의로우신 재판장이 그 날에 내게 주실 것이니 내게만 아니라 주의 나타나심을 사모하는 모든 자에게니라
-      <cite>딤후4:8</cite>
-    </div>
-    <p>또 교회 가운데에서는 빌라델비아가 자기의 면류관이 있음을 안다. 이제 아무도 네 면류관을 빼앗지 못하게 하라는 것은 빌라델비아로부터 나오지 말며 네 위치를 떠나지 말라는 것이다. 그러므로 여기에서 말한 것은 아무나 네 면류관을 빼앗지 못하게 지키라고 한 것이다. 이것은 분명히 빌라델비아의 위험성을 말하는 것이다. 그렇지 않으면 주님이 이러한 경고를 하실 리가 없다. 또한 이런 위험성은 상당히 실제적인 것이므로 주님은 이런 엄중한 지시를 하신 것이다. 그들의 위험성은 어디에 있는가? 그들의 위험성은 곧 그들에게 있는 것을 잃는 것이다. 그러므로 주님은 그들에게 있는 것을 지키라고 하신다. 그들의 위험성은 진보하지 않는 데 있는 것이 아니라 퇴보하는 데 있다. 그들이 주님의 기뻐하심을 받는 까닭은 그들이 서로 사랑하고 주님의 말씀과 주님의 이름에 충성했기 때문이다. 그들의 위험성은 그들이 사랑과 충성심을 잃는 것이다. 아 얼마나 두려운가! 실제로 이런 상황이 발생했다. 이십 년 후 형제들은 분열 되었다. 그들의 분열은 [보수파(Exclusive)]와 [공개파(Open)]의 두 파로 나뉘어진 것이었고 그 두 파도 또 많은 파로 갈라졌다. 그러므로 빌라델비아에서도 이기는 자를 부르신 것이다.</p>
-    <p>이 문제의 원인은 어디에 있는가? 우리는 매우 조심하고 매우 겸손해야 한다. 그렇지 않으면 우리도 똑같이 그 실패의 함정에 빠지고 만다. 나는 그 어떤 분열이든 사랑이 부족하기 때문에 생긴다고 생각한다. 사랑에 문제가 생길 때 사람은 자기 교만이 생긴다 사랑이 없거나 혹은 적을 때 사람은 율법을 주의하게 되고 순서를 강조하고 흠을 잡게 되는 것이다. 사랑에 문제가 생길 때 사람은 교만이 생기고 다른 사람에 대해 질투하여 시기와 분쟁이 생기는 것이다. 성령은 합일의 능력이요 육은 분열의 능력이다. 육이 해결되지 않으면 언젠가는 분열되고 만다.</p>
-    <p>그 외에 형제들의 처음의 결점은 교회의 지방적 입장과 범위를 모르고 있었던 것이다. 그들은 교회의 소극적인 면, 곧 죄에 대해서는 분명히 보았지만 교회의 적극적인 면, 곧 지방적 입장과 범위에 서는 것, 서로 사랑하고 한마음 한 뜻으로 합하는 것에 대하여 본 것은 부족했다. 로마 천주교는 이 땅에서 하나의 연합 교회의 합일에 주의를 기울였고 형제들은 이상적인 하늘에 있는 하나의 영적 교회의 합일에 주의를 기울였다. 그들은 보지 못했고 보았어도 완벽하지 못했다. 서신 가운데서 서로 사랑하는 것은 한 지방 교회에서 서로 사랑하는 것이요 합일도 곧 한 지방 교회의 합일이요 연결도 곧 한 지방 교회의 연결이 요 건축도 또한 한 지방 교회의 건축이요 추방도 한 지방 교회의 추방인 것이다. 언제든지 교회의 합일을 말할 때는 두 종류밖에 없다. 로마 천주교는 땅 위의 모든 교회의 통일을 말했고 형제들은 하늘 위의 영적 합일을 말했다. 결국 전자는 외면적인 합일에 불과했고 후자는 이상적 합일로서 사실상은 분열된 것이다. 둘 다 성경에 나타난 한 지방 한 지방에 있는 교회, 한 지방 한 지방의 합일에 주의하지 않은 것이다.</p>
-    <p>형제들은 각 교회의 지방적 범위를 주의하지 않았다. [보수파]의 형제들은 각 지방의 일치된 행동을 요구하여 결국 지방의 범위가 무너져 연합회적인 착오에 빠지게 되었고 [공개파]는 각 모임의 독립적 행정을 요구했으므로 결국 한 지방에 허다한 교회가 있게 되어 공리파 곧 회중 단위의 착오에 빠지게 된 것이다. [보수파]의 형제들은 지방의 범위를 초과했고 [공개파]의 형제들은 지방의 범위에 도달하지 못했다. 그들은 성경에 나타난 교회, 곧 한 지방에 한 교회 오직 하나의 교회가 있는 것을 잊은 것이다. 성경에서 교회에 대해 말한 것은 다 이런 종류의 교회에 대해 말한 것이다. 이상하게도 오늘날에 와서 성경의 지방 교회에 대한 말씀이 영적 교회에 대한 말씀으로 변해 가는 경향이 있다. 어떤 형제들은 교회를 세울 때 지방 교회보다 작은 교회 -[가정 교회]그 중의 하나임- 를 세운다. 그러나 성경에는 각지가 연합된 교회는 없고 한 지방에서 각각 회중이나 집회 단위로 독립적으로 선 교회도 없다. 여러 지방에 한 교회가 있는 것이나 한 지방에 여러 교회가 있는 것은 다 하나님께서 정하신 것이 아니다. 하나님의 말씀은 한 지방에 한 교회인 것을 분명히 나타낸다. 많은 지방에 한 교회가 있는 것은 성경에서 요구하는 합일을 나누는 것이다.</p>
-    <p>당시에 형제들의 문제는 곧 성경의 지방의 교훈에 대해 분명치 못한 것이었다. 결국 다른 지방의 형제들과 연합된 연합회식의 합일을 꾀한 사람들은 그 지방 형제들과의 분열을 무서워하지 않았다. 본 집회의 형제들과 문제가 없는 집회 단위를 꾀한 사람들도 그 지방의 다른 집회에 있는 형제들과의 분열을 무서워하지 않은 것이다. 성경에 나타난 지방에 대한 교훈의 중요성을 알지 못했기 때문에 결국에는 다 분열 되었다. 하나님은 비실제적인 각 지방의 연합을 원치 않으시며 한 집회 단위로 합일의 범위를 삼는 것 그것은 지나친 자유요, 지나친 방종이요, 제한이 없고 배움이 없는 것이다. 도 원치 않으신다. 단 한 가지라도 뜻이 맞지 않으면 금방 다른 집회를 시작하고 두 세 사람이 독립되어 하나가 되는 것도 원치 않으시는 것이다. 한 지방에는 오직 하나의 합일이 있어야 한다. 이것은 방종하는 육적인 사람에게는 그 얼마나 큰 제한인가? 형제들의 운동은 지금도 여전히 진행 중이다. [지방]에 대한 빛은 갈수록 더 밝아진다. 하나님께서 어디까지 역사하실는지 우리는 알 수 없다. 우리는 다만 역사의 흐름을 따라 밝아질 뿐이다. 우리가 만일 하나님을 향해 절대적으로 바치고 겸손해진다면 우리는 긍휼을 힘입어 지키심을 받아 잘못되는 것에서 벗어날 수 있다.</p>
-
-    <span class="verse-tag">계 3:12</span>
-    <p>[이기는 자는 내 하나님 성전에 기둥이 되게 하리니 그가 결코 다시 나가지 아니하리라 내가 하나님의 이름과 하나님의 성 곧 하늘에서 내 하나님께로부터 내려오는 새 예루살렘의 이름과 나의 새 이름을 그 위에 기록하리라 게3:12] 빌라델비아는 하나님의 성전을 서게 한다. 그 위에 세 이름이 기록되어 있으니 하나님의 이름과 새 예루살렘의 이름과 주님의 새 이름이다. 하나님의 영원한 계획이 완성될 때 빌라델비아의 사람들은 주님에게 돌아오고 하나님을 만족케 한다.</p>
-
-    <span class="verse-tag">계 3:13</span>
-    <p>[귀 있는 자는 성령이 교회들에게 하시는 말씀을 들을지어다]</p>
-
-    <div class="divider">
-      <svg viewBox="0 0 48 48" fill="none"><circle cx="16" cy="24" r="7" stroke="#b3873f" stroke-width="2"/><line x1="21" y1="24" x2="40" y2="24" stroke="#b3873f" stroke-width="2"/><line x1="32" y1="24" x2="32" y2="29" stroke="#b3873f" stroke-width="2"/></svg>
-      <span class="line"></span>
-    </div>
-    <p>아무쪼록 당신이 기억해야 할 것은 하나님께서 그의 깊은 마음과 뜻을 감추지 아니하시고 이미 그의 길을 우리 앞에 너무도 분명하게 보이셨다는 것이다.</p>
-  </section>
-
-</div>
-</div>
+</main>
 
 <footer>
-  <svg class="fkey" viewBox="0 0 48 48" fill="none">
-    <circle cx="16" cy="24" r="9" stroke="#8a7955" stroke-width="2"/>
-    <line x1="23" y1="24" x2="42" y2="24" stroke="#8a7955" stroke-width="2"/>
-    <line x1="34" y1="24" x2="34" y2="31" stroke="#8a7955" stroke-width="2"/>
-    <line x1="40" y1="24" x2="40" y2="29" stroke="#8a7955" stroke-width="2"/>
+  <svg class="footer-mark" viewBox="0 0 320 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g fill="none" stroke="var(--gold-dim)" stroke-width="4" stroke-linecap="round">
+      <line x1="160" y1="232" x2="160" y2="70"/>
+      <path d="M160 190 C 120 190, 100 170, 100 130 C 100 100, 118 84, 118 70"/>
+      <path d="M160 190 C 200 190, 220 170, 220 130 C 220 100, 202 84, 202 70"/>
+      <path d="M160 210 C 90 210, 62 180, 62 140 C 62 105, 84 88, 84 70"/>
+      <path d="M160 210 C 230 210, 258 180, 258 140 C 258 105, 236 88, 236 70"/>
+      <path d="M160 170 C 138 170, 128 155, 128 130 C 128 108, 140 92, 140 70"/>
+      <path d="M160 170 C 182 170, 192 155, 192 130 C 192 108, 180 92, 180 70"/>
+    </g>
   </svg>
-  빌라델비아교회 · 교회 역사의 계통표<br>
-  계 3:7-13
+  <p>교회의 정통 · 워치만 리</p>
 </footer>
 
 <script>
   (function(){
-    try {
-      var els = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window)) return;
-
-      // Only pre-hide elements that are actually below the fold on load —
-      // everything else stays visible (CSS default), so nothing depends
-      // on the observer firing correctly to be readable.
-      els.forEach(function(el){
-        var r = el.getBoundingClientRect();
-        if (r.top > window.innerHeight * 1.05) {
-          el.classList.add('pre-reveal');
+    var els = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+      els.forEach(function(el){ el.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
         }
       });
-
-      var io = new IntersectionObserver(function(entries){
-        entries.forEach(function(en){
-          if (en.isIntersecting) {
-            en.target.classList.remove('pre-reveal');
-            en.target.classList.add('is-visible');
-            io.unobserve(en.target);
-          }
-        });
-      }, {threshold:0.05, rootMargin:'0px 0px -40px 0px'});
-
-      els.forEach(function(el){ io.observe(el); });
-
-      // Safety net: if anything is somehow still hidden after a few
-      // seconds (script error, odd viewport, etc.), force it visible.
-      setTimeout(function(){
-        document.querySelectorAll('.reveal.pre-reveal').forEach(function(el){
-          el.classList.remove('pre-reveal');
-          el.classList.add('is-visible');
-        });
-      }, 4000);
-    } catch (e) {
-      document.querySelectorAll('.reveal').forEach(function(el){
-        el.classList.remove('pre-reveal');
-      });
-    }
+    }, { threshold: 0.08, rootMargin: '0px 0px -60px 0px' });
+    els.forEach(function(el){ io.observe(el); });
   })();
 </script>
 
